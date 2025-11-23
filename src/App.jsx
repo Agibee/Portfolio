@@ -28,7 +28,7 @@ function App() {
             dolorum! In maiores animi reiciendis culpa repudiandae, libero nihil
             voluptate quaerat omnis.
           </p>
-          <div className="flex item-center sm:gap-4 gap-2">
+          <div className="flex item-center sm:gap-4 gap-2npm">
             <a
               href="#"
               className="bg-cyan-700 p-4 rounded-2xl hover:bg-cyan-600"
@@ -48,6 +48,53 @@ function App() {
           alt="Hero Image"
           className="w-[500px] md:ml-auto"
         />
+      </div>
+      {/* Tentang */}
+      <div className="tentang mt-32 py10">
+        <div className="xl:w-2/3 lg:w-3/4 w-full mx-auto p-7 bg-zinc-800 rounded-lg">
+          <img
+            src={DataImage.HeroImage}
+            alt="Image"
+            className="w-12 rounded-md mb-10 sm:hidden"
+          />
+          <p className="text-base/loose mb-10 ">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam
+            blanditiis velit laborum fugit sed! Quos asperiores adipisci
+            exercitationem? Totam at molestias, incidunt perferendis fugiat vel!
+            Fugit asperiores repudiandae quaerat facere! Lorem ipsum dolor sit,
+            amet consectetur adipisicing elit. Voluptate ab, earum, repudiandae
+            facere ut harum saepe ipsam architecto nesciunt ipsa deleniti, sit
+            hic enim vitae iure corrupti doloremque atque impedit. Lorem ipsum
+            dolor sit amet consectetur adipisicing elit. Consequuntur
+            necessitatibus explicabo exercitationem, est omnis ex hic blanditiis
+            ab magni recusandae incidunt quam, voluptas voluptate molestiae
+            provident nobis. Perferendis, nisi quam?
+          </p>
+          <div className="flex items-center justify-between">
+            <img
+              src={DataImage.HeroImage}
+              alt="Image"
+              className="w-12 rounded-md sm:block hidden"
+            />
+            <div className="flex items-center gap-6">
+              <div>
+                <h1 className="text-4xl mb-1">
+                  45 <span className="text-cyan-500">+</span>
+                </h1>
+
+                <p>Proyek Selesai</p>
+              </div>
+            </div>
+            <div>
+              <div flex items-center gap-6>
+                <h1 className="text-4xl mb-1">
+                  4 <span className="text-cyan-500">+</span>
+                </h1>
+                <p>Tahun Pengalaman</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

@@ -22,13 +22,11 @@ function App() {
             Hi, Saya Agib Pratama Wadriansyah
           </h1>
           <p className="text-base/loose mb-6 opacity-50">
-            Saya mempunyai ketertarikan dalam bidang Programing lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Quisquam, quod. lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita,
-            fuga asperiores ab minus cumque debitis magni laboriosam magnam
-            dolorum! In maiores animi reiciendis culpa repudiandae, libero nihil
-            voluptate quaerat omnis.
+            Saya Agib Pratama Wadriansyah, seorang Junior Web Developer asal
+            Sumatera Barat, Indonesia. Saya adalah lulusan Sarjana Teknik
+            Informatika dari Universitas Putra Indonesia YPTK Padang dengan
+            minat dalam pengembangan sistem berbasis web, kecerdasan buatan, dan
+            analisis data.
           </p>
           <div className="flex items-center sm:gap-4 gap-2">
             <a
@@ -54,8 +52,8 @@ function App() {
       </div>
 
       {/* Tentang */}
-      <div className="tentang mt-32 py-10" id="tentang">
-        <div
+      <div className="tentang mt-32 " id="tentang">
+        {/* <div
           className="xl:w-2/3 lg:w-3/4 w-full mx-auto p-7 bg-zinc-800 rounded-lg"
           data-aos="fade-up"
           data-aos-duration="1000"
@@ -67,17 +65,11 @@ function App() {
             className="w-12 rounded-md mb-10 sm:hidden"
           />
           <p className="text-base/loose mb-10">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam
-            blanditiis velit laborum fugit sed! Quos asperiores adipisci
-            exercitationem? Totam at molestias, incidunt perferendis fugiat vel!
-            Fugit asperiores repudiandae quaerat facere! Lorem ipsum dolor sit,
-            amet consectetur adipisicing elit. Voluptate ab, earum, repudiandae
-            facere ut harum saepe ipsam architecto nesciunt ipsa deleniti, sit
-            hic enim vitae iure corrupti doloremque atque impedit. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Consequuntur
-            necessitatibus explicabo exercitationem, est omnis ex hic blanditiis
-            ab magni recusandae incidunt quam, voluptas voluptate molestiae
-            provident nobis. Perferendis, nisi quam?
+            Saya percaya bahwa teknologi bukan hanya tentang kode, tetapi
+            tentang bagaimana solusi digital dapat membantu mempermudah
+            kehidupan manusia. Karena itu, setiap proyek yang saya kerjakan
+            selalu berfokus pada fungsionalitas, efisiensi, dan kemudahan bagi
+            pengguna.
           </p>
           <div className="flex items-center justify-between">
             <img
@@ -89,7 +81,7 @@ function App() {
             <div className="flex items-center gap-6">
               <div>
                 <h1 className="text-4xl mb-1">
-                  45 <span className="text-cyan-500">+</span>
+                  3 <span className="text-cyan-500">+</span>
                 </h1>
                 <p>Proyek Selesai</p>
               </div>
@@ -103,7 +95,7 @@ function App() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Tools */}
         <div className="tools mt-32">

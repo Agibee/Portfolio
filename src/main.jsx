@@ -8,17 +8,17 @@ import Footer from "./components/Footer.jsx";
 import PreLoader from "./components/PreLoader.jsx";
 import "animate.css";
 import AOS from "aos";
-import "aos/dist/aos.css"; // You can also use <link> for styles
+import "aos/dist/aos.css";
 // ..
 AOS.init();
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <PreLoader />
-    <div className="container mx-auto p-4">
-      <Navbar />
+    <Navbar />
+    <div className="container mx-auto p-4 mt-20">
       <App />
-      <Footer />
     </div>
+    <Footer />
   </StrictMode>
 );

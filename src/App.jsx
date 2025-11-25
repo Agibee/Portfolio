@@ -6,7 +6,7 @@ function App() {
     <>
       <div className="hero grid grid-cols-1 md:grid-cols-2 items-center pt-10 xl-gap-0 gap-6">
         <div className="animate__animated animate__fadeInUp animate__delay-2s">
-          <div className="flex items-center gap-3 mb-6 bg-zinc-800 text-white w-fit p-4 rounded-2xl shadow-md">
+          <div className="flex items-center gap-3 mb-6 bg-slate-800 text-white w-fit p-4 rounded-2xl shadow-md">
             <img
               src={DataImage.HeroImage}
               alt="Hero Icon"
@@ -37,7 +37,7 @@ function App() {
             </a>
             <a
               href="#proyek"
-              className="bg-zinc-700 p-4 rounded-2xl hover:bg-zinc-600"
+              className="bg-slate-700 p-4 rounded-2xl hover:bg-slate-600"
             >
               Lihat Proyek <i className="ri-arrow-down-line ri-lg"></i>
             </a>
@@ -53,8 +53,8 @@ function App() {
 
       {/* Tentang */}
       <div className="tentang mt-32 " id="tentang">
-        {/* <div
-          className="xl:w-2/3 lg:w-3/4 w-full mx-auto p-7 bg-zinc-800 rounded-lg"
+        <div
+          className="xl:w-2/3 lg:w-3/4 w-full mx-auto p-7 bg-slate-800 rounded-lg"
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-once="true"
@@ -95,7 +95,8 @@ function App() {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
+        {/* Tentang */}
 
         {/* Tools */}
         <div className="tools mt-32">
@@ -120,7 +121,7 @@ function App() {
           <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
             {listTools.map((tool) => (
               <div
-                className="flex items-center gap-2 p-3 border border-zinc-600 rounded-md hover:bg-zinc-800 group"
+                className="flex items-center gap-2 p-3 border border-slate-600 rounded-md hover:bg-slate-800 group"
                 key={tool.id}
                 data-aos="fade-up"
                 data-aos-duration="1000"
@@ -130,7 +131,7 @@ function App() {
                 <img
                   src={tool.gambar}
                   alt="Tools Image"
-                  className="w-14 bg-zinc-800 p-1 group-hover:bg-zinc-900"
+                  className="w-14 bg-slate-800 p-1 group-hover:bg-slate-900"
                   loading="lazy"
                 />
                 <div>
@@ -165,7 +166,7 @@ function App() {
             {listProyek.map((proyek) => (
               <div
                 key={proyek.id}
-                className="p-4 bg-zinc-800 rounded-md"
+                className="p-4 bg-slate-800 rounded-md"
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-delay={proyek.dad}
@@ -178,7 +179,7 @@ function App() {
                   <div className="flex flex-wrap gap-2">
                     {proyek.tools.map((tool, index) => (
                       <p
-                        className="py-1 px-3 border-zinc-500 rounded-md bg-zinc-600 font-semibold"
+                        className="py-1 px-3 border-slate-500 rounded-md bg-slate-600 font-semibold"
                         key={index}
                       >
                         {tool}
@@ -188,7 +189,7 @@ function App() {
                   <div className="mt-8 text-center">
                     <a
                       href="#"
-                      className="bg-cyan-700 p-3 rounded-lg block border-zinc-600 hover:bg-cyan-600"
+                      className="bg-cyan-700 p-3 rounded-lg block border-slate-600 hover:bg-cyan-600"
                     >
                       Lihat Website
                     </a>
@@ -221,7 +222,7 @@ function App() {
           <form
             action="https://formsubmit.co/agibpratama732@gmail.com"
             method="POST"
-            className="bg-zinc-800 p-10 sm:w-fit w-full mx-auto rounded-md"
+            className="bg-slate-800 p-10 sm:w-fit w-full mx-auto rounded-md"
             autoComplete="off"
             data-aos="fade-up"
             data-aos-duration="1000"
@@ -235,7 +236,7 @@ function App() {
                   type="text"
                   name="nama"
                   placeholder="Masukkan Nama Anda..."
-                  className="border border-zinc-500 p-2 rounded-md"
+                  className="border border-slate-500 p-2 rounded-md"
                   required
                 />
               </div>
@@ -245,7 +246,7 @@ function App() {
                   type="text"
                   name="email"
                   placeholder="Masukkan E-Mail Anda...."
-                  className="border border-zinc-500 p-2 rounded-md"
+                  className="border border-slate-500 p-2 rounded-md"
                   required
                 />
               </div>
@@ -259,14 +260,14 @@ function App() {
                   cols="45"
                   rows="7"
                   placeholder="Pesan..."
-                  className="border border-zinc-500 p-2 rounded-md"
+                  className="border border-slate-500 p-2 rounded-md"
                   required
                 ></textarea>
               </div>
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-cyan-700 p-3 rounded-lg w-full cursor-pointer border-zinc-600 hover:bg-cyan-600"
+                  className="bg-cyan-700 p-3 rounded-lg w-full cursor-pointer border-slate-600 hover:bg-cyan-600"
                 >
                   Kirim Pesan
                 </button>

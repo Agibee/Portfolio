@@ -1,9 +1,3 @@
-import HeroImage from "/assets/hero-img.webp";
-
-const Image = {
-  HeroImage,
-};
-
 export default Image;
 
 import Tools1 from "/assets/tools/vscode.png";
@@ -98,7 +92,7 @@ export const listTools = [
   },
 ];
 
-import Proyek1 from "/assets/proyek/proyek1.webp";
+import Proyek1 from "/assets/proyek/stifin.png";
 import Proyek2 from "/assets/proyek/proyek2.webp";
 import Proyek3 from "/assets/proyek/proyek3.webp";
 import Proyek4 from "/assets/proyek/proyek4.webp";
@@ -109,9 +103,9 @@ export const listProyek = [
   {
     id: 1,
     gambar: Proyek1,
-    nama: "Website Sekolah",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["HTML", "CSS", "Javascript", "AOS"],
+    nama: "Company Profile STIFIN",
+    desk: "Proyek akademik untuk memenuhi tugas akhir: pembuatan website Company Profile untuk pelatihan web programming di CV. Mediatama, bekerja sama dengan BPVP Padang.",
+    tools: ["HTML", "CSS", "PHP", "MySQL", "Bootstrap", "TinyMCE"],
     dad: "200",
   },
   {

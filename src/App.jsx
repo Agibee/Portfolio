@@ -1,5 +1,6 @@
 import DataImage from "./data";
 import { listTools, listProyek } from "./data";
+import TextType from "./components/TextType/TextType";
 
 function App() {
   return (
@@ -8,26 +9,40 @@ function App() {
         <div className="animate__animated animate__fadeInUp animate__delay-2s">
           <div className="flex items-center gap-3 mb-6 bg-slate-800 text-white w-fit p-4 rounded-2xl shadow-md">
             <img
-              src={DataImage.HeroImage}
+              src="assets/photo.png"
               alt="Hero Icon"
               className="w-10 h-10 rounded-md object-cover"
               loading="lazy"
             />
             <q className="text-sm md:text-base opacity-90">
-              Kode yang indah, lahir dari ketekunan 😁
+              Dari hello world, menuju dunia yang lebih besar 😁
             </q>
           </div>
 
-          <h1 className="text-5xl/tight font-bold mb-6">
+          <h1 className="text-2xl/tight font-bold mb-6">
             Hi, Saya Agib Pratama Wadriansyah
           </h1>
+
+          <TextType
+            className="text-3xl font-bold mb-6 text-slate-500"
+            text={[
+              "I'am Junior Web Developer",
+              "IT Enthusiast",
+              "Data Analyst Enthusiast",
+            ]}
+            typingSpeed={75}
+            pauseDuration={1500}
+            showCursor={true}
+            cursorCharacter="|"
+          />
+
           <p className="text-base/loose mb-6 opacity-50">
-            Saya Agib Pratama Wadriansyah, seorang Junior Web Developer asal
-            Sumatera Barat, Indonesia. Saya adalah lulusan Sarjana Teknik
-            Informatika dari Universitas Putra Indonesia YPTK Padang dengan
-            minat dalam pengembangan sistem berbasis web, kecerdasan buatan, dan
-            analisis data.
+            Fresh graduate Teknik Informatika dari Universitas Putra Indonesia
+            YPTK Padang, saya seorang Junior Web Developer dari Sumatera Barat,
+            Indonesia, dengan minat pada pengembangan web, AI, dan analisis
+            data.
           </p>
+
           <div className="flex items-center sm:gap-4 gap-2">
             <a
               href="#"
@@ -44,7 +59,7 @@ function App() {
           </div>
         </div>
         <img
-          src={DataImage.HeroImage}
+          src="assets/photo.png"
           alt="Hero Image"
           className="w-[500px] md:ml-auto animate__animated animate__fadeInUp animate__delay-3s"
           loading="lazy"

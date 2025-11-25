@@ -19,11 +19,11 @@ const Navbar = () => {
   return (
     <div
       className={`fixed w-full top-0 left-0 z-50 transition-colors duration-300 ${
-        active ? "bg-transparent backdrop-blur-md shadow-md" : "bg-slate-900"
+        active ? "bg-transparent backdrop-blur-md shadow-md" : "bg-slate-700"
       } flex justify-between items-center px-6 py-4`}
     >
       <div className="logo">
-        <h1 className="text-3xl font-bold bg-white text-black p-1 md:bg-transparent md:text-white">
+        <h1 className="text-3xl font-bold p-1 md:bg-transparent md:text-white">
           Portfolio
         </h1>
       </div>

@@ -17,9 +17,11 @@ import {
 } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 
-// assets are served from `public/`; reference by absolute URL so Vite resolves them at runtime
-const cardGLB = "/assets/Lanyard/card.glb";
-const lanyard = "/assets/Lanyard/lanyard.png";
+// Assets are served from the public directory
+// Construct the path dynamically based on the import.meta.env.BASE_URL
+const base = import.meta.env.BASE_URL;
+const cardGLB = `${base}assets/Lanyard/card.glb`;
+const lanyard = `${base}assets/Lanyard/lanyard.png`;
 
 import * as THREE from "three";
 

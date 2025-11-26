@@ -92,9 +92,9 @@ export const listTools = [
   },
 ];
 
-import Proyek1 from "/assets/proyek/stifin.png";
-import Proyek2 from "/assets/proyek/proyek2.webp";
-import Proyek3 from "/assets/proyek/proyek3.webp";
+import Proyek1 from "/assets/proyek/spk.png";
+import Proyek2 from "/assets/proyek/skripsi.png";
+import Proyek3 from "/assets/proyek/stifin.png";
 
 export const listProyek = [
   {

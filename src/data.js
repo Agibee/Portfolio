@@ -105,7 +105,15 @@ export const listProyek = [
     gambar: Proyek1,
     nama: "Company Profile STIFIN",
     desk: "Proyek akademik untuk memenuhi tugas akhir: pembuatan website Company Profile untuk pelatihan web programming di CV. Mediatama, bekerja sama dengan BPVP Padang.",
-    tools: ["HTML", "CSS", "PHP", "MySQL", "Bootstrap", "TinyMCE"],
+    tools: [
+      "HTML",
+      "CSS",
+      "PHP",
+      "MySQL",
+      "Bootstrap",
+      "Javascript",
+      "TinyMCE",
+    ],
     dad: "200",
   },
   {

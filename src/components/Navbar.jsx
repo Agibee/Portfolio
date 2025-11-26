@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
-  const [active, setActive] = useState(false);
+  const [_active, setActive] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,17 +14,11 @@ const Navbar = () => {
 
   return (
     <div
-      className={`fixed w-full top-0 left-0 z-50 transition-colors duration-300 ${
-        active ? "bg-transparent backdrop-blur-md shadow-md" : "bg-slate-700"
-      } flex flex-row justify-center sm:justify-between items-center px-4 sm:px-6 py-3 sm:py-4`}
+      className={`fixed w-full top-0 left-0 z-50 transition-colors duration-300 bg-slate-700 flex flex-row justify-between items-center px-4 sm:px-6 py-3 sm:py-4`}
     >
-      {/* Logo, kecil di HP sebelum scroll, hide saat scroll */}
-      <div
-        className={`logo transition-all duration-300 ${
-          active ? "hidden" : "block"
-        }`}
-      >
-        <h1 className="text-xl sm:text-3xl font-bold text-white p-1">Agibee</h1>
+      {/* Logo hanya muncul di sm ke atas */}
+      <div className="hidden sm:block">
+        <h1 className="text-3xl font-bold text-white p-1">Agibee</h1>
       </div>
 
       {/* Menu */}

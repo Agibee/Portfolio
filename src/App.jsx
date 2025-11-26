@@ -1,9 +1,18 @@
-import DataImage from "./data";
-import { listTools, listProyek } from "./data";
+import { useState } from "react";
+import { listTools, listProyek, listSertifikat } from "./data";
 import TextType from "./components/TextType/TextType";
 import Lanyard from "./components/Lanyard";
 
 function App() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
+
+  const lastIndex = currentPage * itemsPerPage;
+  const firstIndex = lastIndex - itemsPerPage;
+
+  const currentItems = listSertifikat.slice(firstIndex, lastIndex);
+  const totalPages = Math.ceil(listSertifikat.length / itemsPerPage);
+
   return (
     <>
       <div className="hero grid grid-cols-1 md:grid-cols-2 items-center pt-10 xl-gap-0 gap-6">
@@ -60,15 +69,15 @@ function App() {
           </div>
         </div>
         <img
-          src="assets/photo.png"
+          src="assets/foto.png"
           alt="Hero Image"
-          className="w-[500px] md:ml-auto animate__animated animate__fadeInUp animate__delay-3s"
+          className="w-[400px] items-center md:ml-auto animate__animated animate__fadeInUp animate__delay-3s"
           loading="lazy"
         />
       </div>
 
       {/* Tentang */}
-      <div className="min-h-screen overflow-x-hidden mt-32">
+      <div className="min-h-screen overflow-x-hidden mt-32" id="tentang">
         <div className="text-center mb-14">
           <h1
             className="text-4xl font-bold mb-3"
@@ -107,40 +116,49 @@ function App() {
             <h2 className="text-2xl font-semibold mb-4">Hi, I'm Agibee 👋</h2>
 
             <p className="text-gray-300 leading-relaxed mb-5">
-              I’m a fresh graduate and junior web developer who enjoys creating
-              websites with clean UI, smooth animation, and modern technologies.
-              Fokus saya saat ini adalah memperdalam React, Tailwind CSS, dan
-              membangun proyek-proyek yang punya nilai real.
+              Saya Agib Pratama Wadriansyah, seorang Junior Web Developer asal
+              Sumatera Barat, Indonesia. Lulusan Sarjana Teknik Informatika dari
+              Universitas Putra Indonesia YPTK Padang, saya memiliki minat dalam
+              pengembangan sistem berbasis web, kecerdasan buatan, dan analisis
+              data.
             </p>
 
-            <p className="text-gray-300 leading-relaxed mb-6">
-              Ketika coding, saya percaya bahwa setiap detail itu penting, mulai
-              dari struktur yang bersih sampai tampilan yang nyaman untuk user.
+            <p className="text-gray-300 leading-relaxed mb-5 italic">
+              “Membangun solusi digital yang tidak hanya berfungsi, tapi juga
+              bermakna.”
             </p>
 
-            <h3 className="text-xl font-semibold mb-3">Tech Stack</h3>
-            <ul className="grid grid-cols-2 gap-2 text-gray-300 mb-8">
-              <li>• HTML / CSS</li>
-              <li>• JavaScript</li>
-              <li>• React JS</li>
-              <li>• Tailwind CSS</li>
-              <li>• PHP & MySQL</li>
-              <li>• Laravel</li>
-            </ul>
+            <p className="text-gray-300 leading-relaxed mb-5">
+              Saya percaya bahwa teknologi bukan hanya tentang kode, tetapi
+              tentang bagaimana solusi digital dapat membantu mempermudah
+              kehidupan manusia. Karena itu, setiap proyek yang saya kerjakan
+              selalu berfokus pada fungsionalitas, efisiensi, dan kemudahan bagi
+              pengguna.
+            </p>
 
-            <div className="flex gap-4">
-              <a
-                href="#"
-                className="px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 transition"
-              >
-                Download CV
-              </a>
-              <a
-                href="#contact"
-                className="px-5 py-2 rounded-lg border border-gray-500 hover:border-white transition"
-              >
-                Contact Me
-              </a>
+            <div className="grid grid-cols-2 gap-4 text-gray-400 text-sm mb-6">
+              <div>
+                <p>
+                  <strong>Birthday:</strong> 19 April 2002
+                </p>
+                <p>
+                  <strong>Phone:</strong> +6285182061019
+                </p>
+                <p>
+                  <strong>City:</strong> West Sumatera, Indonesia
+                </p>
+              </div>
+              <div>
+                <p>
+                  <strong>Age:</strong> 23
+                </p>
+                <p>
+                  <strong>Degree:</strong> Bachelor Computer Engineering
+                </p>
+                <p>
+                  <strong>Email:</strong> agibpratama732@gmail.com
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -247,6 +265,85 @@ function App() {
           ))}
         </div>
       </div>
+      {/* Sertifikat*/}
+      <div className="pelatihan mt-32 py-10" id="sertifikat">
+        {" "}
+        <h1
+          className="text-center text-4xl font-bold mb-2"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-once="true"
+        >
+          {" "}
+          Pelatihan & Sertifikat{" "}
+        </h1>{" "}
+        <p
+          className="text-base/loose text-center opacity-50"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="300"
+          data-aos-once="true"
+        >
+          {" "}
+          Berikut beberapa pelatihan & sertifikasi yang telah saya ikuti{" "}
+        </p>
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-4">
+          {currentItems.map((item) => (
+            <div
+              key={item.id}
+              className="p-4  border rounded-md hover:bg-slate-700 transition-all duration-300"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay={item.dad}
+              data-aos-once="true"
+            >
+              <img
+                src={item.gambar}
+                alt="Sertifikat"
+                className="rounded-md w-full object-cover"
+              />
+              <h2 className="text-xl font-bold mt-4">{item.nama}</h2>
+              <p className="opacity-60 mt-1">{item.penyelenggara}</p>
+              <p className="text-sm opacity-50 mt-1">{item.tahun}</p>
+            </div>
+          ))}
+        </div>
+        {/* Pagination */}
+        <div className="flex justify-center items-center gap-3 mt-10">
+          <button
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+            className="px-4 py-2 rounded-md bg-slate-700 disabled:bg-slate-900 disabled:opacity-40 hover:bg-slate-600"
+          >
+            Prev
+          </button>
+
+          {[...Array(totalPages)].map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentPage(index + 1)}
+              className={`px-4 py-2 rounded-md transition-all duration-200 ${
+                currentPage === index + 1
+                  ? "bg-cyan-700"
+                  : "bg-slate-700 hover:bg-slate-600"
+              }`}
+            >
+              {index + 1}
+            </button>
+          ))}
+
+          <button
+            onClick={() =>
+              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+            }
+            disabled={currentPage === totalPages}
+            className="px-4 py-2 rounded-md bg-slate-700 disabled:bg-slate-900 disabled:opacity-40 hover:bg-slate-600"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+      {/* Pelatihan End */}
 
       {/* Kontak Start */}
       <div className="kontak mt-32 sm:p-10 p-0" id="kontak">

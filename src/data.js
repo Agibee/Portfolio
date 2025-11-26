@@ -1,16 +1,16 @@
 export default Image;
 
 import Tools1 from "/assets/tools/vscode.png";
-import Tools2 from "/assets/tools/reactjs.png";
-import Tools3 from "/assets/tools/nextjs.png";
-import Tools4 from "/assets/tools/tailwind.png";
-import Tools5 from "/assets/tools/bootstrap.png";
-import Tools6 from "/assets/tools/js.png";
-import Tools7 from "/assets/tools/nodejs.png";
-import Tools8 from "/assets/tools/github.png";
-import Tools9 from "/assets/tools/ai.png";
-import Tools10 from "/assets/tools/canva.png";
-import Tools11 from "/assets/tools/figma.png";
+import Tools2 from "/assets/tools/html.png";
+import Tools3 from "/assets/tools/css.png";
+import Tools4 from "/assets/tools/js.png";
+import Tools5 from "/assets/tools/php.png";
+import Tools6 from "/assets/tools/laravel.png";
+import Tools7 from "/assets/tools/bootstrap.png";
+import Tools8 from "/assets/tools/tailwind.png";
+import Tools9 from "/assets/tools/reactjs.png";
+import Tools10 from "/assets/tools/github.png";
+import Tools11 from "/assets/tools/canva.png";
 
 export const listTools = [
   {
@@ -23,87 +23,100 @@ export const listTools = [
   {
     id: 2,
     gambar: Tools2,
-    nama: "React JS",
-    ket: "Framework",
-    dad: "200",
+    nama: "HTML",
+    ket: "Markup Language",
+    dad: "100",
   },
   {
     id: 3,
     gambar: Tools3,
-    nama: "Next JS",
-    ket: "Framework",
-    dad: "300",
+    nama: "CSS",
+    ket: "Style Sheet Language",
+    dad: "100",
   },
   {
     id: 4,
     gambar: Tools4,
-    nama: "Tailwind CSS",
-    ket: "Framework",
-    dad: "400",
+    nama: "JavaScript",
+    ket: "Programming Language",
+    dad: "100",
   },
   {
     id: 5,
     gambar: Tools5,
-    nama: "Bootstrap",
-    ket: "Framework",
-    dad: "500",
+    nama: "PHP",
+    ket: "Scripting Language",
+    dad: "100",
   },
   {
     id: 6,
     gambar: Tools6,
-    nama: "Javascript",
-    ket: "Language",
-    dad: "600",
+    nama: "Laravel",
+    ket: "PHP Framework",
+    dad: "100",
   },
   {
     id: 7,
     gambar: Tools7,
-    nama: "Node JS",
-    ket: "Javascript Runtime",
-    dad: "700",
+    nama: "Bootstrap",
+    ket: "CSS Framework",
+    dad: "100",
   },
   {
     id: 8,
     gambar: Tools8,
-    nama: "Github",
-    ket: "Repository",
-    dad: "800",
+    nama: "Tailwind CSS",
+    ket: "CSS Framework",
+    dad: "100",
   },
   {
     id: 9,
     gambar: Tools9,
-    nama: "Adobe Illustrator",
-    ket: "Design App",
-    dad: "900",
+    nama: "GitHub",
+    ket: "Repository",
+    dad: "100",
   },
   {
     id: 10,
     gambar: Tools10,
-    nama: "Canva",
-    ket: "Design App",
-    dad: "1000",
+    nama: "ReactJS",
+    ket: "JavaScript Library",
+    dad: "100",
   },
   {
     id: 11,
     gambar: Tools11,
-    nama: "Figma",
-    ket: "Design App",
-    dad: "1100",
+    nama: "Canva",
+    ket: "Design Tool",
+    dad: "100",
   },
 ];
 
 import Proyek1 from "/assets/proyek/stifin.png";
 import Proyek2 from "/assets/proyek/proyek2.webp";
 import Proyek3 from "/assets/proyek/proyek3.webp";
-import Proyek4 from "/assets/proyek/proyek4.webp";
-import Proyek5 from "/assets/proyek/proyek5.webp";
-import Proyek6 from "/assets/proyek/proyek6.webp";
 
 export const listProyek = [
   {
     id: 1,
     gambar: Proyek1,
-    nama: "Company Profile STIFIN",
+    nama: "Sistem Pendukung Keputusan Bantuan Sosial",
+    desk: "Proyek akademik untuk memenuhi tugas PKL: pembuatan Sistem Pendukung keputusan bantuan sosial menggunakan metode TOPSIS pada Kantor Walinagari Talaok Kecamatan Bayang Kabupaten Pesisir Selatan.",
+    tools: ["HTML", "CSS", "PHP", "MySQL", "Bootstrap"],
+    dad: "200",
+  },
+  {
+    id: 2,
+    gambar: Proyek2,
+    nama: "Sistem Prediksi Curah Hujan",
+    desk: "Pryek akademik untuk memenuhi tugas akhir(Skripsi): pembuatan sistem prediksi curah hujan berbasis web menggunakan metode kmeans clustering dan naive bayes berdasarkan data historis curah hujan di Kota Padang.",
+    tools: ["HTML", "CSS", "PHP", "MySQL", "Bootstrap"],
+    dad: "300",
+  },
+  {
+    id: 3,
+    gambar: Proyek3,
+    nama: "Company Profile",
     desk: "Proyek akademik untuk memenuhi tugas akhir: pembuatan website Company Profile untuk pelatihan web programming di CV. Mediatama, bekerja sama dengan BPVP Padang.",
     tools: [
       "HTML",
@@ -114,46 +127,126 @@ export const listProyek = [
       "Javascript",
       "TinyMCE",
     ],
-    dad: "200",
+  },
+];
+
+import Sertif1 from "/assets/sertifikat/dasarweb.png";
+import Sertif2 from "/assets/sertifikat/dasarjs.jpeg";
+import Sertif3 from "/assets/sertifikat/html_codepolitan.png";
+import Sertif4 from "/assets/sertifikat/sqldicoding.jpeg";
+import Sertif5 from "/assets/sertifikat/ai.png";
+import Sertif6 from "/assets/sertifikat/aihuwawe.png";
+import Sertif7 from "/assets/sertifikat/datasciencedicoding.jpeg";
+import Sertif8 from "/assets/sertifikat/visualisasidata.jpeg";
+import Sertif9 from "/assets/sertifikat/dataanalis.jpeg";
+import Sertif10 from "/assets/sertifikat/datasciencedigitalent.jpeg";
+import Sertif11 from "/assets/sertifikat/vsgajuniorweb.jpeg";
+import Sertif12 from "/assets/sertifikat/intermediateweb.png";
+import Sertif13 from "/assets/sertifikat/introduction.jpeg";
+
+export const listSertifikat = [
+  {
+    id: 1,
+    gambar: Sertif1,
+    nama: "Dasar Pemrograman Web",
+    penyelenggara: "Dicoding Indonesia",
+    tahun: "2023",
+    dad: 200,
   },
   {
     id: 2,
-    gambar: Proyek2,
-    nama: "Company Profile",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["HTML", "CSS", "Javascript", "AOS", "Swiper", "Lightbox Gallery"],
-    dad: "300",
+    gambar: Sertif2,
+    nama: "Dasar Pemrograman JavaScript",
+    penyelenggara: "Dicoding Indonesia",
+    tahun: "2023",
+    dad: 200,
   },
   {
     id: 3,
-    gambar: Proyek3,
-    nama: "Web Pernikahan 2.0",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["Vite", "ReactJS", "TailwindCSS", "AOS"],
-    dad: "400",
+    gambar: Sertif3,
+    nama: "Belajar dasar HTML dan CSS",
+    penyelenggara: "Codepolitan",
+    tahun: "2025",
+    dad: 200,
   },
   {
     id: 4,
-    gambar: Proyek4,
-    nama: "Website Course",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["Vite", "ReactJS", "Bootstrap", "AOS"],
-    dad: "500",
+    gambar: Sertif4,
+    nama: "Belajar Dasar SQL",
+    penyelenggara: "Dicoding Indonesia",
+    tahun: "2025",
+    dad: 200,
   },
-  {
-    id: 5,
-    gambar: Proyek5,
-    nama: "Web Portfolio",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["HTML", "CSS", "Javascript", "Bootsrap"],
-    dad: "600",
-  },
+  // {
+  //   id: 5,
+  //   gambar: Sertif6,
+  //   nama: "Ai basic: Overview of AI",
+  //   penyelenggara: "Huawei",
+  //   tahun: "2024",
+  //   dad: 200,
+  // },
   {
     id: 6,
-    gambar: Proyek6,
-    nama: "Company Profile 2.0",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["NextJS", "TailwindCSS", "Framermotion"],
-    dad: "700",
+    gambar: Sertif5,
+    nama: "Belajar Dasar AI",
+    penyelenggara: "Dicoding Indonesia",
+    tahun: "2025",
+    dad: 200,
+  },
+  {
+    id: 7,
+    gambar: Sertif7,
+    nama: "Belajar dasar Data Science",
+    penyelenggara: "Dicoding Indonesia",
+    tahun: "2025",
+    dad: 200,
+  },
+  {
+    id: 8,
+    gambar: Sertif8,
+    nama: "Belajar Dasar Visualisasi Data",
+    penyelenggara: "Dicoding Indonesia",
+    tahun: "2025",
+    dad: 200,
+  },
+  {
+    id: 9,
+    gambar: Sertif9,
+    nama: "Introduction to Data Analysis",
+    penyelenggara: "DQLab",
+    tahun: "2025",
+    dad: 200,
+  },
+  {
+    id: 10,
+    gambar: Sertif10,
+    nama: "Fundamental Data Science",
+    penyelenggara: "FGA Digitalent Kominfo",
+    tahun: "2025",
+    dad: 200,
+  },
+  {
+    id: 11,
+    gambar: Sertif11,
+    nama: "Fundamental Junior Web Developer",
+    penyelenggara: "VSGA Digitalent Kominfo",
+    tahun: "2025",
+    dad: 200,
+  },
+  {
+    id: 12,
+    gambar: Sertif12,
+    nama: "Intermediate Junior Web Developer",
+    penyelenggara: "VSGA Digitalent Kominfo",
+    tahun: "2025",
+    dad: 200,
+  },
+  {
+    id: 13,
+    gambar: Sertif13,
+    nama: "Introduction to Financial Technology",
+    penyelenggara: "Dicoding Indonesia x DBS Foundation",
+    tahun: "2025",
+    dad: 200,
   },
 ];

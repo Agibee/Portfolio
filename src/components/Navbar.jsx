@@ -24,7 +24,7 @@ const Navbar = () => {
     >
       <div className="logo">
         <h1 className="text-3xl font-bold p-1 md:bg-transparent md:text-white">
-          Portfolio
+          Agibee
         </h1>
       </div>
 

@@ -60,12 +60,12 @@ function App() {
             >
               Download CV <i className="ri-download-line ri-lg"></i>
             </a>
-            <a
+            {/* <a
               href="#proyek"
               className="bg-slate-700 p-4 rounded-2xl hover:bg-slate-600"
             >
               Lihat Proyek <i className="ri-arrow-down-line ri-lg"></i>
-            </a>
+            </a> */}
           </div>
         </div>
         <img
@@ -136,24 +136,19 @@ function App() {
               pengguna.
             </p>
 
-            <div className="grid grid-cols-2 gap-4 text-gray-400 text-sm mb-6">
+            <div className="gap-4 text-gray-400 text-sm mb-6">
               <div>
                 <p>
-                  <strong>Birthday:</strong> 19 April 2002
+                  <strong>Tanggal Lahir:</strong> 19 April 2002
                 </p>
                 <p>
-                  <strong>Phone:</strong> +6285182061019
+                  <strong>Kota:</strong> Padang, Sumatera Barat
                 </p>
                 <p>
-                  <strong>City:</strong> West Sumatera, Indonesia
-                </p>
-              </div>
-              <div>
-                <p>
-                  <strong>Age:</strong> 23
+                  <strong>Usia:</strong> 23 Tahun 
                 </p>
                 <p>
-                  <strong>Degree:</strong> Bachelor Computer Engineering
+                  <strong>Pendidikan:</strong> Sarjana Teknik Informatika
                 </p>
                 <p>
                   <strong>Email:</strong> agibpratama732@gmail.com

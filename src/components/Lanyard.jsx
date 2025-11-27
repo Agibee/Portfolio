@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useRef, useState, useMemo, Suspense } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
 import {
   useGLTF,
@@ -33,9 +33,47 @@ export default function Lanyard({
   fov = 20,
   transparent = true,
 }) {
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" && window.innerWidth < 768
+  );
+
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  const maxDpr =
+    typeof window !== "undefined"
+      ? Math.min(window.devicePixelRatio || 1, 1.5)
+      : 1;
+
+  // For mobile devices show a lightweight static fallback image instead
+  // of the full WebGL scene. This avoids WebGL/context issues & memory
+  // pressure on lower-end phones.
+  if (isMobile) {
+    return (
+      <div
+        className="w-full flex justify-center items-center"
+        style={{ minHeight: "40vh" }}
+      >
+        <img
+          src={lanyard}
+          alt="Lanyard"
+          className="w-3/4 h-auto object-contain"
+          loading="lazy"
+        />
+      </div>
+    );
+  }
+
   return (
-    <div className="relative z-0 w-full h-screen flex justify-center items-center transform scale-100 origin-center">
+    <div
+      className="relative z-0 w-full flex justify-center items-center transform scale-100 origin-center"
+      style={{ minHeight: "60vh" }}
+    >
       <Canvas
+        dpr={[1, maxDpr]}
         camera={{ position: position, fov: fov }}
         gl={{ alpha: transparent }}
         onCreated={({ gl }) =>
@@ -43,39 +81,41 @@ export default function Lanyard({
         }
       >
         <ambientLight intensity={Math.PI} />
-        <Physics gravity={gravity} timeStep={1 / 60}>
-          <Band />
-        </Physics>
-        <Environment blur={0.75}>
-          <Lightformer
-            intensity={2}
-            color="white"
-            position={[0, -1, 5]}
-            rotation={[0, 0, Math.PI / 3]}
-            scale={[100, 0.1, 1]}
-          />
-          <Lightformer
-            intensity={3}
-            color="white"
-            position={[-1, -1, 1]}
-            rotation={[0, 0, Math.PI / 3]}
-            scale={[100, 0.1, 1]}
-          />
-          <Lightformer
-            intensity={3}
-            color="white"
-            position={[1, 1, 1]}
-            rotation={[0, 0, Math.PI / 3]}
-            scale={[100, 0.1, 1]}
-          />
-          <Lightformer
-            intensity={10}
-            color="white"
-            position={[-10, 0, 14]}
-            rotation={[0, Math.PI / 2, Math.PI / 3]}
-            scale={[100, 10, 1]}
-          />
-        </Environment>
+        <Suspense fallback={null}>
+          <Physics gravity={gravity} timeStep={1 / 60}>
+            <Band />
+          </Physics>
+          <Environment blur={0.75}>
+            <Lightformer
+              intensity={2}
+              color="white"
+              position={[0, -1, 5]}
+              rotation={[0, 0, Math.PI / 3]}
+              scale={[100, 0.1, 1]}
+            />
+            <Lightformer
+              intensity={3}
+              color="white"
+              position={[-1, -1, 1]}
+              rotation={[0, 0, Math.PI / 3]}
+              scale={[100, 0.1, 1]}
+            />
+            <Lightformer
+              intensity={3}
+              color="white"
+              position={[1, 1, 1]}
+              rotation={[0, 0, Math.PI / 3]}
+              scale={[100, 0.1, 1]}
+            />
+            <Lightformer
+              intensity={10}
+              color="white"
+              position={[-10, 0, 14]}
+              rotation={[0, Math.PI / 2, Math.PI / 3]}
+              scale={[100, 10, 1]}
+            />
+          </Environment>
+        </Suspense>
       </Canvas>
     </div>
   );

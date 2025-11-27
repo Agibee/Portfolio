@@ -5,6 +5,7 @@ import Lanyard from "./components/Lanyard";
 
 function App() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [submitted, setSubmitted] = useState(false);
   const itemsPerPage = 6;
 
   const lastIndex = currentPage * itemsPerPage;
@@ -13,6 +14,22 @@ function App() {
   const currentItems = listSertifikat.slice(firstIndex, lastIndex);
   const totalPages = Math.ceil(listSertifikat.length / itemsPerPage);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
+    try {
+      await fetch("https://formsubmit.co/agibpratama732@gmail.com", {
+        method: "POST",
+        body: formData,
+      });
+      setSubmitted(true);
+      e.target.reset();
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (error) {
+      console.error("Error sending message:", error);
+    }
+  };
   return (
     <>
       <div className="hero grid grid-cols-1 md:grid-cols-2 items-center pt-10 xl-gap-0 gap-6">
@@ -36,7 +53,7 @@ function App() {
           <TextType
             className="text-3xl font-bold mb-6 text-slate-500"
             text={[
-              "I'am Junior Web Developer",
+              "I'am Web Developer",
               "IT Enthusiast",
               "Data Analyst Enthusiast",
             ]}
@@ -55,17 +72,20 @@ function App() {
 
           <div className="flex items-center sm:gap-4 gap-2">
             <a
-              href="#"
+              href={`${
+                import.meta.env.BASE_URL
+              }assets/CV_AgibPratamaWadriansyah.pdf`}
+              download
               className="bg-cyan-700 p-4 rounded-2xl hover:bg-cyan-600"
             >
               Download CV <i className="ri-download-line ri-lg"></i>
             </a>
-            {/* <a
+            <a
               href="#proyek"
               className="bg-slate-700 p-4 rounded-2xl hover:bg-slate-600"
             >
               Lihat Proyek <i className="ri-arrow-down-line ri-lg"></i>
-            </a> */}
+            </a>
           </div>
         </div>
         <img
@@ -145,7 +165,7 @@ function App() {
                   <strong>Kota:</strong> Padang, Sumatera Barat
                 </p>
                 <p>
-                  <strong>Usia:</strong> 23 Tahun 
+                  <strong>Usia:</strong> 23 Tahun
                 </p>
                 <p>
                   <strong>Pendidikan:</strong> Sarjana Teknik Informatika
@@ -247,14 +267,14 @@ function App() {
                     </p>
                   ))}
                 </div>
-                <div className="mt-8 text-center">
+                {/* <div className="mt-8 text-center">
                   <a
                     href="#"
                     className="bg-cyan-700 p-3 rounded-lg block border-slate-600 hover:bg-cyan-600"
                   >
                     Lihat Website
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
@@ -363,6 +383,7 @@ function App() {
           action="https://formsubmit.co/agibpratama732@gmail.com"
           method="POST"
           className="bg-slate-800 p-10 sm:w-fit w-full mx-auto rounded-md"
+          onSubmit={handleSubmit}
           autoComplete="off"
           data-aos="fade-up"
           data-aos-duration="1000"
@@ -403,6 +424,12 @@ function App() {
                 className="border border-slate-500 p-2 rounded-md"
                 required
               ></textarea>
+              {submitted && (
+                <div className="bg-green-600 text-white p-3 rounded-md text-center font-semibold">
+                  ✓ Pesan Anda telah terkirim! Terima kasih telah menghubungi
+                  saya.
+                </div>
+              )}
             </div>
             <div className="text-center">
               <button

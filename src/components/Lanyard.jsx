@@ -17,15 +17,14 @@ import {
 } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 
-// Assets are served from the public directory
-// Construct the path dynamically based on the import.meta.env.BASE_URL
-const base = import.meta.env.BASE_URL;
-const cardGLB = `${base}assets/Lanyard/card.glb`;
-const lanyard = `${base}assets/Lanyard/lanyard.png`;
-
 import * as THREE from "three";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
+
+// Assets path
+const base = import.meta.env.BASE_URL;
+const cardGLB = `${base}assets/Lanyard/card.glb`;
+const lanyard = `${base}assets/Lanyard/lanyard.png`;
 
 export default function Lanyard({
   position = [0, 0, 30],
@@ -43,48 +42,37 @@ export default function Lanyard({
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
+  // Optimasi untuk mobile
+  const mobileScale = isMobile ? 0.75 : 1;
+  const mobileFov = isMobile ? 28 : fov;
+
   const maxDpr =
     typeof window !== "undefined"
-      ? Math.min(window.devicePixelRatio || 1, 1.5)
+      ? Math.min(window.devicePixelRatio || 1, isMobile ? 1.2 : 1.5)
       : 1;
-
-  // For mobile devices show a lightweight static fallback image instead
-  // of the full WebGL scene. This avoids WebGL/context issues & memory
-  // pressure on lower-end phones.
-  if (isMobile) {
-    return (
-      <div
-        className="w-full flex justify-center items-center"
-        style={{ minHeight: "40vh" }}
-      >
-        <img
-          src={lanyard}
-          alt="Lanyard"
-          className="w-3/4 h-auto object-contain"
-          loading="lazy"
-        />
-      </div>
-    );
-  }
 
   return (
     <div
-      className="relative z-0 w-full flex justify-center items-center transform scale-100 origin-center"
-      style={{ minHeight: "60vh" }}
+      className="relative z-0 w-full flex justify-center items-center"
+      style={{ minHeight: isMobile ? "40vh" : "60vh" }}
     >
       <Canvas
         dpr={[1, maxDpr]}
-        camera={{ position: position, fov: fov }}
+        camera={{ position: position, fov: mobileFov }}
         gl={{ alpha: transparent }}
         onCreated={({ gl }) =>
           gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)
         }
       >
         <ambientLight intensity={Math.PI} />
+
         <Suspense fallback={null}>
           <Physics gravity={gravity} timeStep={1 / 60}>
-            <Band />
+            <group scale={mobileScale}>
+              <Band />
+            </group>
           </Physics>
+
           <Environment blur={0.75}>
             <Lightformer
               intensity={2}
@@ -120,6 +108,7 @@ export default function Lanyard({
     </div>
   );
 }
+
 function Band({ maxSpeed = 50, minSpeed = 0 }) {
   const band = useRef(),
     fixed = useRef(),
@@ -127,10 +116,12 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
     j2 = useRef(),
     j3 = useRef(),
     card = useRef();
+
   const vec = new THREE.Vector3(),
     ang = new THREE.Vector3(),
     rot = new THREE.Vector3(),
     dir = new THREE.Vector3();
+
   const segmentProps = {
     type: "dynamic",
     canSleep: true,
@@ -138,6 +129,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
     angularDamping: 4,
     linearDamping: 4,
   };
+
   const { nodes, materials } = useGLTF(cardGLB);
   const texture = useTexture(lanyard);
 
@@ -160,33 +152,32 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
     t.format = texture.format;
     t.minFilter = texture.minFilter;
     t.magFilter = texture.magFilter;
-    if (texture.repeat && typeof texture.repeat.clone === "function") {
-      t.repeat = texture.repeat.clone();
-    } else if (texture.repeat) {
-      t.repeat = texture.repeat;
-    }
     t.wrapS = THREE.RepeatWrapping;
     t.wrapT = THREE.RepeatWrapping;
     t.needsUpdate = true;
     return t;
   }, [texture]);
 
-  useEffect(() => {
-    return () => {
-      if (
-        wrappedTexture &&
-        wrappedTexture !== texture &&
-        typeof wrappedTexture.dispose === "function"
-      ) {
-        wrappedTexture.dispose();
-      }
-    };
-  }, [wrappedTexture, texture]);
   const [dragged, drag] = useState(false);
   const [hovered, hover] = useState(false);
   const [isSmall, setIsSmall] = useState(
     () => typeof window !== "undefined" && window.innerWidth < 1024
   );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmall(window.innerWidth < 1024);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (hovered) {
+      document.body.style.cursor = dragged ? "grabbing" : "grab";
+      return () => void (document.body.style.cursor = "auto");
+    }
+  }, [hovered, dragged]);
 
   useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1]);
   useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1]);
@@ -196,76 +187,69 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
     [0, 1.5, 0],
   ]);
 
-  useEffect(() => {
-    if (hovered) {
-      document.body.style.cursor = dragged ? "grabbing" : "grab";
-      return () => void (document.body.style.cursor = "auto");
-    }
-  }, [hovered, dragged]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmall(window.innerWidth < 1024);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   useFrame((state, delta) => {
     if (dragged) {
       vec.set(state.pointer.x, state.pointer.y, 0.5).unproject(state.camera);
       dir.copy(vec).sub(state.camera.position).normalize();
       vec.add(dir.multiplyScalar(state.camera.position.length()));
+
       [card, j1, j2, j3, fixed].forEach((ref) => ref.current?.wakeUp());
+
       card.current?.setNextKinematicTranslation({
         x: vec.x - dragged.x,
         y: vec.y - dragged.y,
         z: vec.z - dragged.z,
       });
     }
+
     if (fixed.current) {
       [j1, j2].forEach((ref) => {
         if (!ref.current.lerped)
           ref.current.lerped = new THREE.Vector3().copy(
             ref.current.translation()
           );
+
         const clampedDistance = Math.max(
           0.1,
           Math.min(1, ref.current.lerped.distanceTo(ref.current.translation()))
         );
+
         ref.current.lerped.lerp(
           ref.current.translation(),
           delta * (minSpeed + clampedDistance * (maxSpeed - minSpeed))
         );
       });
+
       curve.points[0].copy(j3.current.translation());
       curve.points[1].copy(j2.current.lerped);
       curve.points[2].copy(j1.current.lerped);
       curve.points[3].copy(fixed.current.translation());
+
       band.current.geometry.setPoints(curve.getPoints(32));
+
       ang.copy(card.current.angvel());
       rot.copy(card.current.rotation());
       card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z });
     }
   });
 
-  // curve.curveType is set during initialization; wrappedTexture handles wrapping
-
   return (
     <>
       <group position={[0, 4, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
+
         <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>
           <BallCollider args={[0.1]} />
         </RigidBody>
+
         <RigidBody position={[1, 0, 0]} ref={j2} {...segmentProps}>
           <BallCollider args={[0.1]} />
         </RigidBody>
+
         <RigidBody position={[1.5, 0, 0]} ref={j3} {...segmentProps}>
           <BallCollider args={[0.1]} />
         </RigidBody>
+
         <RigidBody
           position={[2, 0, 0]}
           ref={card}
@@ -273,6 +257,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
           type={dragged ? "kinematicPosition" : "dynamic"}
         >
           <CuboidCollider args={[0.8, 1.125, 0.01]} />
+
           <group
             scale={2.25}
             position={[0, -1.2, -0.05]}
@@ -293,22 +278,20 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
             <mesh geometry={nodes.card.geometry}>
               <meshPhysicalMaterial
                 map={materials.base.map}
-                map-anisotropy={16}
                 clearcoat={1}
                 clearcoatRoughness={0.15}
                 roughness={0.9}
                 metalness={0.8}
               />
             </mesh>
-            <mesh
-              geometry={nodes.clip.geometry}
-              material={materials.metal}
-              material-roughness={0.3}
-            />
+
+            <mesh geometry={nodes.clip.geometry} material={materials.metal} />
+
             <mesh geometry={nodes.clamp.geometry} material={materials.metal} />
           </group>
         </RigidBody>
       </group>
+
       <mesh ref={band}>
         <meshLineGeometry />
         <meshLineMaterial

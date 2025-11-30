@@ -6,13 +6,18 @@ import Lanyard from "./components/Lanyard";
 function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [submitted, setSubmitted] = useState(false);
+
   const itemsPerPage = 6;
 
+  // Urutkan sertifikat dari id terbesar → terkecil
+  const sortedItems = [...listSertifikat].sort((a, b) => b.id - a.id);
+
+  // Pagination
   const lastIndex = currentPage * itemsPerPage;
   const firstIndex = lastIndex - itemsPerPage;
 
-  const currentItems = listSertifikat.slice(firstIndex, lastIndex);
-  const totalPages = Math.ceil(listSertifikat.length / itemsPerPage);
+  const currentItems = sortedItems.slice(firstIndex, lastIndex);
+  const totalPages = Math.ceil(sortedItems.length / itemsPerPage);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,7 +47,7 @@ function App() {
               loading="lazy"
             />
             <q className="text-sm md:text-base opacity-90">
-              Dari hello world, menuju dunia yang lebih besar 😁
+              Selalu ingin tahu, selalu ingin berkembang 😁
             </q>
           </div>
 
@@ -91,7 +96,7 @@ function App() {
         <img
           src="assets/foto.png"
           alt="Hero Image"
-          className="w-[400px] items-center md:ml-auto animate__animated animate__fadeInUp animate__delay-3s"
+          className="w-[400px] items-center hidden md:block md:ml-auto animate__animated animate__fadeInUp animate__delay-3s"
           loading="lazy"
         />
       </div>
@@ -112,8 +117,8 @@ function App() {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            A junior web developer who loves building modern, clean, and
-            interactive digital experiences.
+            Seorang Web Developer dengan ketertarikan pada web development,
+            kecerdasan buatan, dan analisis data.
           </p>
         </div>
 

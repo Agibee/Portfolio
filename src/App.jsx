@@ -94,7 +94,7 @@ function App() {
           </div>
         </div>
         <img
-          src="assets/foto.png"
+          src="assets/photoss.jpg"
           alt="Hero Image"
           className="w-[400px] items-center hidden md:block md:ml-auto animate__animated animate__fadeInUp animate__delay-3s"
           loading="lazy"

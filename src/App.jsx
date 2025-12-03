@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { listTools, listProyek, listSertifikat } from "./data";
-import TextType from "./components/TextType/TextType";
+import TextType from "./components/TextType";
 import Lanyard from "./components/Lanyard";
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
   return (
     <>
       <div className="hero grid grid-cols-1 md:grid-cols-2 items-center pt-10 xl-gap-0 gap-6">
-        <div className="animate__animated animate__fadeInUp animate__delay-2s">
+        <div className="animate__animated animate__fadeInUp">
           <div className="flex items-center gap-3 mb-6 bg-slate-800 text-white w-fit p-4 rounded-2xl shadow-md">
             <img
               src="assets/photo.png"
@@ -51,12 +51,12 @@ function App() {
             </q>
           </div>
 
-          <h1 className="text-2xl/tight font-bold mb-6">
+          <h1 className="text-2xl/tight font-bold mb-6 sm:text-xl md:text-4xl lg:text-5xl">
             Hi, Saya Agib Pratama Wadriansyah
           </h1>
 
           <TextType
-            className="text-3xl font-bold mb-6 text-slate-500"
+            className="text-lg font-bold mb-6 text-slate-500 sm:text-xl md:text-3xl"
             text={[
               "I'am Web Developer",
               "IT Enthusiast",
@@ -96,7 +96,7 @@ function App() {
         <img
           src="assets/photoss.jpg"
           alt="Hero Image"
-          className="w-[400px] items-center hidden md:block md:ml-auto animate__animated animate__fadeInUp animate__delay-3s"
+          className="w-[400px] items-center hidden md:block md:ml-auto animate__animated animate__fadeInUp animate__delay-1s"
           loading="lazy"
         />
       </div>

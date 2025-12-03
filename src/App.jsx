@@ -51,10 +51,9 @@ function App() {
             </q>
           </div>
 
-          <h1 className="text-2xl/tight font-bold mb-6 sm:text-xl md:text-4xl lg:text-5xl">
+          <h1 className="text-xl/tight font-bold mb-6 sm:text-xl md:text-4xl lg:text-5xl">
             Hi, Saya Agib Pratama Wadriansyah
           </h1>
-
           <TextType
             className="text-lg font-bold mb-6 text-slate-500 sm:text-xl md:text-3xl"
             text={[

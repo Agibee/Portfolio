@@ -9,6 +9,7 @@ import Tools6 from "/assets/tools/laravel.png";
 import Tools7 from "/assets/tools/bootstrap.png";
 import Tools8 from "/assets/tools/tailwind.png";
 import Tools9 from "/assets/tools/reactjs.png";
+import Tools12 from "/assets/tools/nodejs.png";
 import Tools10 from "/assets/tools/github.png";
 import Tools11 from "/assets/tools/canva.png";
 
@@ -85,6 +86,13 @@ export const listTools = [
   },
   {
     id: 11,
+    gambar: Tools12,
+    nama: "NodeJS",
+    ket: "JavaScript Runtime",
+    dad: "100",
+  },
+  {
+    id: 12,
     gambar: Tools11,
     nama: "Canva",
     ket: "Design Tool",
@@ -143,6 +151,7 @@ import Sertif10 from "/assets/sertifikat/datasciencedigitalent.jpeg";
 import Sertif11 from "/assets/sertifikat/vsgajuniorweb.jpeg";
 import Sertif12 from "/assets/sertifikat/intermediateweb.png";
 import Sertif13 from "/assets/sertifikat/introduction.jpeg";
+import Sertif14 from "/assets/sertifikat/Web.jpg";
 
 export const listSertifikat = [
   {
@@ -246,6 +255,14 @@ export const listSertifikat = [
     gambar: Sertif13,
     nama: "Introduction to Financial Technology",
     penyelenggara: "Dicoding Indonesia x DBS Foundation",
+    tahun: "2025",
+    dad: 200,
+  },
+  {
+    id: 14,
+    gambar: Sertif14,
+    nama: "Pengembangan Web dengan Node.js dan React.js",
+    penyelenggara: "Balai Pelatihan Vokasi dan Produktivitas Padang",
     tahun: "2025",
     dad: 200,
   },

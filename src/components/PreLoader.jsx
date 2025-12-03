@@ -15,7 +15,7 @@ const PreLoader = () => {
   if (!loading) return null;
 
   return (
-    <div className="w-screen h-screen fixed inset-0 flex items-center justify-center bg-black z-50">
+    <div className="w-screen h-screen fixed inset-0 flex items-center justify-center bg-slate-900 z-50">
       <CircularText
         text="Loading • Please Wait • "
         spinDuration={10}

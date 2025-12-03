@@ -70,7 +70,7 @@ function App() {
 
           <p className="text-base/loose mb-6 opacity-50">
             Fresh graduate Teknik Informatika dari Universitas Putra Indonesia
-            YPTK Padang, saya seorang Junior Web Developer dari Sumatera Barat,
+            YPTK Padang, saya seorang Web Developer dari Sumatera Barat,
             Indonesia, dengan minat pada pengembangan web, AI, dan analisis
             data.
           </p>
@@ -141,8 +141,8 @@ function App() {
             <h2 className="text-2xl font-semibold mb-4">Hi, I'm Agibee 👋</h2>
 
             <p className="text-gray-300 leading-relaxed mb-5">
-              Saya Agib Pratama Wadriansyah, seorang Junior Web Developer asal
-              Sumatera Barat, Indonesia. Lulusan Sarjana Teknik Informatika dari
+              Saya Agib Pratama Wadriansyah, seorang Web Developer asal Sumatera
+              Barat, Indonesia. Lulusan Sarjana Teknik Informatika dari
               Universitas Putra Indonesia YPTK Padang, saya memiliki minat dalam
               pengembangan sistem berbasis web, kecerdasan buatan, dan analisis
               data.

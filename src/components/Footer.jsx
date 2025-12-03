@@ -20,13 +20,27 @@ const Footer = () => {
 
         {/* Social Icons */}
         <div className="flex gap-4 mt-3 md:mt-0">
-          <a href="https://www.instagram.com/agprawaa19/">
+          <a
+            href="https://www.instagram.com/agprawaa19/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="ri-instagram-fill text-xl md:text-2xl"></i>
           </a>
-          <a href="https://www.linkedin.com/in/agib-pratama-wadriansyah-078a49258/?isSelfProfile=true">
+
+          <a
+            href="https://www.linkedin.com/in/agib-pratama-wadriansyah-078a49258/?isSelfProfile=true"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="ri-linkedin-fill text-xl md:text-2xl"></i>
           </a>
-          <a href="https://github.com/Agibee">
+
+          <a
+            href="https://github.com/Agibee"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="ri-github-fill text-xl md:text-2xl"></i>
           </a>
         </div>

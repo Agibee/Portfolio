@@ -108,7 +108,7 @@ function App() {
             {/* Quick Get in Touch */}
             <div className="flex items-center gap-6 text-slate-400 mt-4">
               <a
-                href="https://linkedin.com/in/username"
+                href="https://www.linkedin.com/in/agib-pratama-wadriansyah-078a49258/"
                 target="_blank"
                 aria-label="LinkedIn"
                 className="transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]"
@@ -117,7 +117,7 @@ function App() {
               </a>
 
               <a
-                href="https://github.com/username"
+                href="https://github.com/Agibee"
                 target="_blank"
                 aria-label="GitHub"
                 className="transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]"
@@ -134,7 +134,7 @@ function App() {
               </a>
 
               <a
-                href="https://instagram.com/username"
+                href="https://www.instagram.com/agprawaa19/"
                 target="_blank"
                 aria-label="Instagram"
                 className="transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 hover:text-pink-400 hover:drop-shadow-[0_0_8px_rgba(244,114,182,0.6)]"
@@ -142,14 +142,14 @@ function App() {
                 <i className="ri-instagram-line ri-xl"></i>
               </a>
 
-              <a
-                href="https://www.buymeacoffee.com/username"
+              {/* <a
+                href="#"
                 target="_blank"
                 aria-label="Buy Me a Coffee"
                 className="transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 hover:text-yellow-400 hover:drop-shadow-[0_0_8px_rgba(250,204,21,0.6)]"
               >
                 <i className="ri-cup-fill ri-xl"></i>
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -166,7 +166,11 @@ function App() {
 
       {/* Stats Start */}
       <section id="stats" className="mt-20 border-y  border-slate-800 p-10">
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
+        <div
+          className="grid grid-cols-2 sm:grid-cols-3 gap-8 text-center max-w-4xl mx-auto"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
           <div>
             <p className="text-3xl font-bold text-white">
               {listProyek.length}+

@@ -117,7 +117,7 @@ function App() {
               </a>
 
               <a
-                href="https://github.com/Agibee"
+                href="https://github.com/"
                 target="_blank"
                 aria-label="GitHub"
                 className="transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]"

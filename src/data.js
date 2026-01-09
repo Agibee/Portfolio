@@ -12,6 +12,8 @@ import Tools9 from "/assets/tools/reactjs.png";
 import Tools12 from "/assets/tools/nodejs.png";
 import Tools10 from "/assets/tools/github.png";
 import Tools11 from "/assets/tools/canva.png";
+import Tools13 from "/assets/tools/mysql.png";
+import Tools14 from "/assets/tools/typescript.png";
 
 export const listTools = [
   {
@@ -98,11 +100,26 @@ export const listTools = [
     ket: "Design Tool",
     dad: "100",
   },
+  {
+    id: 13,
+    gambar: Tools13,
+    nama: "MySQL",
+    ket: "Database Management System",
+    dad: "100",
+  },
+  {
+    id: 14,
+    gambar: Tools14,
+    nama: "TypeScript",
+    ket: "Programming Language",
+    dad: "100",
+  },
 ];
 
 import Proyek1 from "/assets/proyek/spk.png";
 import Proyek2 from "/assets/proyek/skripsi.png";
 import Proyek3 from "/assets/proyek/stifin.png";
+import Proyek4 from "/assets/proyek/edutrack.png";
 
 export const listProyek = [
   {
@@ -135,6 +152,13 @@ export const listProyek = [
       "Javascript",
       "TinyMCE",
     ],
+  },
+  {
+    id: 4,
+    gambar: Proyek4,
+    nama: "EduTrack - Student Course Management System",
+    desk: "Sistem manajemen mahasiswa dan kursus berbasis Laravel dengan fitur pengelolaan nilai ujian, upload tugas, autentikasi admin, serta laporan performa mahasiswa.",
+    tools: ["Laravel", "PHP", "MySQL", "Tailwind", "TypeScript"],
   },
 ];
 

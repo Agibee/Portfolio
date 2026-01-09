@@ -52,6 +52,13 @@ export const listTools = [
     dad: "100",
   },
   {
+    id: 13,
+    gambar: Tools13,
+    nama: "MySQL",
+    ket: "Database Management System",
+    dad: "100",
+  },
+  {
     id: 6,
     gambar: Tools6,
     nama: "Laravel",
@@ -73,13 +80,6 @@ export const listTools = [
     dad: "100",
   },
   {
-    id: 9,
-    gambar: Tools10,
-    nama: "GitHub",
-    ket: "Repository",
-    dad: "100",
-  },
-  {
     id: 10,
     gambar: Tools9,
     nama: "ReactJS",
@@ -94,24 +94,24 @@ export const listTools = [
     dad: "100",
   },
   {
-    id: 12,
-    gambar: Tools11,
-    nama: "Canva",
-    ket: "Design Tool",
-    dad: "100",
-  },
-  {
-    id: 13,
-    gambar: Tools13,
-    nama: "MySQL",
-    ket: "Database Management System",
-    dad: "100",
-  },
-  {
     id: 14,
     gambar: Tools14,
     nama: "TypeScript",
     ket: "Programming Language",
+    dad: "100",
+  },
+  {
+    id: 9,
+    gambar: Tools10,
+    nama: "GitHub",
+    ket: "Repository",
+    dad: "100",
+  },
+  {
+    id: 12,
+    gambar: Tools11,
+    nama: "Canva",
+    ket: "Design Tool",
     dad: "100",
   },
 ];

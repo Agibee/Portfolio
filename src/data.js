@@ -176,6 +176,7 @@ import Sertif11 from "/assets/sertifikat/vsgajuniorweb.jpeg";
 import Sertif12 from "/assets/sertifikat/intermediateweb.png";
 import Sertif13 from "/assets/sertifikat/introduction.jpeg";
 import Sertif14 from "/assets/sertifikat/Web.jpg";
+import Sertif15 from "/assets/sertifikat/CodingStudio.png";
 
 export const listSertifikat = [
   {
@@ -288,6 +289,14 @@ export const listSertifikat = [
     nama: "Pengembangan Web dengan Node.js dan React.js",
     penyelenggara: "Balai Pelatihan Vokasi dan Produktivitas Padang",
     tahun: "2025",
+    dad: 200,
+  },
+  {
+    id: 15,
+    gambar: Sertif15,
+    nama: "Full Stack Web Development ",
+    penyelenggara: "Coding Studio",
+    tahun: "2026",
     dad: 200,
   },
 ];

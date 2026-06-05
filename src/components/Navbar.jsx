@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
-  const [_active, setActive] = useState(false);
+  const [active, setActive] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setActive(window.scrollY > 50);
+      setActive(window.scrollY > 30);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -14,47 +14,53 @@ const Navbar = () => {
 
   return (
     <div
-      className={`fixed w-full top-0 left-0 z-50 transition-colors duration-300 bg-slate-700 flex flex-row justify-between items-center px-4 sm:px-6 py-3 sm:py-4`}
+      className={`
+        fixed w-full top-0 left-0 z-50
+
+        flex justify-between items-center
+
+        px-4 sm:px-6 py-3
+
+        transition-all duration-300
+
+        /* BASE STYLE (SEBELUM SCROLL UDAH BAGUS) */
+        bg-slate-900/40 backdrop-blur-md
+        border-b border-slate-800/40
+
+        ${active ? "shadow-lg border-slate-700/60 bg-slate-900/70" : ""}
+      `}
     >
-      {/* Logo hanya muncul di sm ke atas */}
-      <div className="hidden sm:block">
-        <h1 className="text-3xl font-bold text-white p-1">Agibee</h1>
-      </div>
+      {/* Logo */}
+      <h1 className="hidden sm:block text-2xl font-bold text-white">Agibee</h1>
 
       {/* Menu */}
-      <ul className="flex flex-row gap-6 text-base whitespace-nowrap">
-        <li>
-          <a
-            href="#beranda"
-            className="font-medium hover:text-gray-300 transition-colors"
-          >
-            Beranda
-          </a>
-        </li>
-        <li>
-          <a
-            href="#tentang"
-            className="font-medium hover:text-gray-300 transition-colors"
-          >
-            Tentang
-          </a>
-        </li>
-        <li>
-          <a
-            href="#proyek"
-            className="font-medium hover:text-gray-300 transition-colors"
-          >
-            Proyek
-          </a>
-        </li>
-        <li>
-          <a
-            href="#kontak"
-            className="font-medium hover:text-gray-300 transition-colors"
-          >
-            Kontak
-          </a>
-        </li>
+      <ul className="flex gap-6 text-sm sm:text-base text-gray-300">
+        {["Home", "About", "Projects", "Contact"].map((item) => (
+          <li key={item}>
+            <a
+              href={`#${item}`}
+              className="
+                relative
+
+                hover:text-cyan-400
+                transition
+
+                after:content-['']
+                after:absolute
+                after:left-0
+                after:-bottom-1
+                after:w-0
+                after:h-0.5
+                after:bg-cyan-400
+                after:transition-all
+
+                hover:after:w-full
+              "
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   );

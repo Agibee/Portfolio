@@ -2,6 +2,7 @@ import { useState } from "react";
 import { listTools, listProyek, listSertifikat } from "./data";
 import TextType from "./components/TextType";
 import Lanyard from "./components/Lanyard";
+import ProfileCard from "./components/ProfileCard";
 
 function App() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -38,8 +39,14 @@ function App() {
   return (
     <>
       {/* Hero Start */}
-      <section id="hero" className="pt-10">
-        <div className="hero grid grid-cols-1 md:grid-cols-2 items-center gap-6">
+      <section id="hero" className="pt-4">
+        <div
+          className="flex items-center gap-3 mb-6 
+bg-slate-800/60 backdrop-blur-md 
+border border-cyan-500/20
+text-white w-fit p-4 rounded-2xl 
+shadow-[0_0_15px_rgba(34,211,238,0.15)]"
+        >
           {/* LEFT */}
           <div className="animate__animated animate__fadeInUp">
             {/* Quote Badge */}
@@ -47,17 +54,17 @@ function App() {
               <img
                 src="assets/photo.png"
                 alt="Hero Icon"
-                className="w-10 h-10 rounded-md object-cover"
+                className="w-10 h-10 rounded-md object-cover shadow-lg shadow-cyan-400/50"
                 loading="lazy"
               />
               <q className="text-sm md:text-base opacity-90">
-                Selalu ingin tahu, selalu ingin berkembang 😁
+                Stay curious, keep growing 😁
               </q>
             </div>
 
             {/* Heading */}
             <h1 className="text-xl/tight font-bold mb-4 sm:text-2xl md:text-4xl lg:text-5xl">
-              Hi, Saya{" "}
+              Hi, Im{" "}
               <span className="text-cyan-400">Agib Pratama Wadriansyah</span>
             </h1>
 
@@ -77,9 +84,9 @@ function App() {
 
             {/* Description */}
             <p className="text-base/relaxed mb-6 text-slate-400 max-w-xl">
-              Fresh graduate Teknik Informatika dari Universitas Putra Indonesia
-              YPTK Padang. Berfokus pada pengembangan web, kecerdasan buatan,
-              dan analisis data.
+              Fresh graduate in Informatics Engineering from Universitas Putra
+              Indonesia YPTK Padang. Focused on web development, artificial
+              intelligence, and data analysis.
             </p>
 
             {/* CTA */}
@@ -98,7 +105,7 @@ function App() {
                 href="#proyek"
                 className="bg-slate-700 px-6 py-4 rounded-2xl hover:bg-slate-600 transition"
               >
-                Lihat Proyek <i className="ri-arrow-down-line ri-lg"></i>
+                View Projects <i className="ri-arrow-down-line ri-lg"></i>
               </a>
             </div>
 
@@ -154,12 +161,24 @@ function App() {
           </div>
 
           {/* RIGHT IMAGE */}
-          <img
-            src="assets/photoss.jpg"
-            alt="Hero Image"
-            className="w-[380px] hidden md:block md:ml-auto animate__animated animate__fadeInUp animate__delay-1s"
-            loading="lazy"
-          />
+          <div className="hidden md:flex justify-end">
+            <ProfileCard
+              name=""
+              title=""
+              handle=""
+              status=""
+              contactText="Contact Me"
+              avatarUrl="assets/photoss.jpg"
+              showUserInfo={false}
+              enableTilt={true}
+              enableMobileTilt={false}
+              behindGlowEnabled={true}
+              behindGlowColor="rgba(34,211,238,0.5)"
+              onContactClick={() =>
+                window.open("mailto:agibpratama732@gmail.com")
+              }
+            />
+          </div>
         </div>
       </section>
       {/* Hero End */}
@@ -194,82 +213,117 @@ function App() {
       {/* Stats End */}
 
       {/* Tentang Start */}
-      <section id="tentang" className="min-h-screen overflow-x-hidden mt-32">
-        <div className="min-h-screen overflow-x-hidden ">
-          <div className="text-center mb-14">
-            <h1
-              className="text-4xl font-bold mb-3"
-              data-aos="fade-up"
-              data-aos-duration="800"
-              data-aos-once="true"
-            >
-              About Me
-            </h1>
-            <p
-              className="text-gray-400 max-w-xl mx-auto text-sm md:text-base"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              Seorang Web Developer dengan ketertarikan pada web development,
-              kecerdasan buatan, dan analisis data.
-            </p>
-          </div>
+      <section
+        id="tentang"
+        className="min-h-screen overflow-x-hidden mt-32 relative"
+      >
+        {/* 🔥 Electric Glow Background */}
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          <div
+            className="absolute top-1/2 left-1/2 w-[600px] h-[600px] -translate-x-1/2 -translate-y-1/2 
+      bg-cyan-500/20 blur-[140px] rounded-full animate-pulse"
+          ></div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-            {/* LEFT – Lanyard */}
-            <div
-              className="col-span-6 flex justify-center"
-              data-aos="fade-right"
-              data-aos-duration="1000"
-            >
-              <Lanyard position={[0, 0, 10]} gravity={[0, -40, 0]} />
+          <div
+            className="absolute top-20 left-20 w-[300px] h-[300px] 
+      bg-blue-500/10 blur-[120px] rounded-full"
+          ></div>
+
+          <div
+            className="absolute bottom-20 right-20 w-[300px] h-[300px] 
+      bg-cyan-400/10 blur-[120px] rounded-full"
+          ></div>
+        </div>
+
+        {/* ⚡ Glow Border Wrapper */}
+        <div className="relative p-px rounded-2xl bg-linear-to-r from-cyan-500/40 via-slate-700/40 to-cyan-500/40 shadow-[0_0_30px_rgba(34,211,238,0.15)]">
+          {/* Glass Container */}
+          <div className="min-h-screen overflow-x-hidden bg-slate-950/80 backdrop-blur-xl rounded-2xl p-6 md:p-10">
+            {/* Title Section */}
+            <div className="text-center mb-14">
+              <h1
+                className="text-4xl font-bold mb-3 text-white drop-shadow-[0_0_10px_rgba(34,211,238,0.3)]"
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-once="true"
+              >
+                About Me
+              </h1>
+
+              <p
+                className="text-gray-400 max-w-xl mx-auto text-sm md:text-base"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                Web Developer focused on building modern web applications, with
+                interests in artificial intelligence and data analysis.e
+              </p>
             </div>
 
-            {/* RIGHT – Bio Content */}
-            <div
-              className="col-span-6 px-5 md:px-10"
-              data-aos="fade-left"
-              data-aos-duration="1000"
-            >
-              <h2 className="text-2xl font-semibold mb-4">Hi, I'm Agibee 👋</h2>
+            {/* Content Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+              {/* LEFT – Lanyard */}
+              <div
+                className="col-span-6 flex justify-center"
+                data-aos="fade-right"
+                data-aos-duration="1000"
+              >
+                <div className="absolute w-[400px] h-[400px] bg-cyan-500/10 blur-[120px] rounded-full -z-10"></div>
+                <Lanyard position={[0, 0, 10]} gravity={[0, -40, 0]} />
+              </div>
 
-              <p className="text-gray-300 leading-relaxed mb-5">
-                Saya Agib Pratama Wadriansyah, seorang Web Developer asal
-                Sumatera Barat, Indonesia. Lulusan Sarjana Teknik Informatika
-                dari Universitas Putra Indonesia YPTK Padang, saya memiliki
-                minat dalam pengembangan sistem berbasis web, kecerdasan buatan,
-                dan analisis data.
-              </p>
+              {/* RIGHT – Bio Content */}
+              <div
+                className="col-span-6 px-5 md:px-10"
+                data-aos="fade-left"
+                data-aos-duration="1000"
+              >
+                <h2 className="text-2xl font-semibold mb-4 text-white">
+                  Hi, I'm Agibee 👋
+                </h2>
 
-              <p className="text-gray-300 leading-relaxed mb-5 italic">
-                “Membangun solusi digital yang tidak hanya berfungsi, tapi juga
-                bermakna.”
-              </p>
+                <p className="text-gray-300 leading-relaxed mb-5">
+                  I am Agib Pratama Wadriansyah, a Web Developer from West
+                  Sumatra, Indonesia. I graduated in Informatics Engineering
+                  from Universitas Putra Indonesia YPTK Padang, with interests
+                  in web development, artificial intelligence, and data
+                  analysis.
+                </p>
 
-              <p className="text-gray-300 leading-relaxed mb-5">
-                Saya percaya bahwa teknologi bukan hanya tentang kode, tetapi
-                tentang bagaimana solusi digital dapat membantu mempermudah
-                kehidupan manusia. Karena itu, setiap proyek yang saya kerjakan
-                selalu berfokus pada fungsionalitas, efisiensi, dan kemudahan
-                bagi pengguna.
-              </p>
+                <p className="text-gray-300 leading-relaxed mb-5 italic">
+                  “Building digital solutions that are not only functional, but
+                  also meaningful.”
+                </p>
 
-              <div className="gap-4 text-gray-400 text-sm mb-6">
-                <div>
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  I focus on creating efficient and user-friendly web
+                  applications that solve real problems and improve user
+                  experience.
+                </p>
+
+                {/* Info Box */}
+                <div className="p-4 rounded-xl border border-cyan-500/20 bg-slate-900/30 backdrop-blur-md shadow-[0_0_20px_rgba(34,211,238,0.1)] text-sm text-gray-400 space-y-2">
                   <p>
-                    <strong>Tanggal Lahir:</strong> 19 April 2002
+                    <span className="text-white font-semibold">
+                      Birth Date:
+                    </span>{" "}
+                    19 April 2002
                   </p>
                   <p>
-                    <strong>Kota:</strong> Padang, Sumatera Barat
+                    <span className="text-white font-semibold">Location:</span>{" "}
+                    Padang, West Sumatra
                   </p>
                   <p>
-                    <strong>Usia:</strong> 23 Tahun
+                    <span className="text-white font-semibold">Age:</span> 24
+                    Years Old
                   </p>
                   <p>
-                    <strong>Pendidikan:</strong> Sarjana Teknik Informatika
+                    <span className="text-white font-semibold">Education:</span>{" "}
+                    Bachelor of Computer Science (Informatics Engineering)
                   </p>
                   <p>
-                    <strong>Email:</strong> agibpratama732@gmail.com
+                    <span className="text-white font-semibold">Email:</span>{" "}
+                    agibpratama732@gmail.com
                   </p>
                 </div>
               </div>
@@ -280,45 +334,67 @@ function App() {
       {/* Tentang End */}
 
       {/* Tools Start */}
-      <section id="tools" className="tools mt-32">
+      <section id="tools" className="tools mt-32 ">
         <div>
+          {/* Title */}
           <h1
-            className="text-4xl/snug font-bold mb-4"
+            className="text-4xl font-bold mb-3 text-white drop-shadow-[0_0_10px_rgba(34,211,238,0.3)]"
             data-aos="fade-up"
-            data-aos-duration="1000"
+            data-aos-duration="800"
             data-aos-once="true"
           >
-            Tools yang dipakai
+            Tools
           </h1>
+
+          {/* Description */}
           <p
-            className="xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full text-base/loose opacity-50"
+            className="xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full text-base/loose text-gray-400"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="300"
             data-aos-once="true"
           >
-            Berikut ini beberapa tools yang biasa yang saya pakai dalam
-            pembuatan website
+            A collection of tools and technologies I use to build modern web
+            applications.
           </p>
+
+          {/* Tools Grid */}
           <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
             {listTools.map((tool) => (
               <div
-                className="flex items-center gap-2 p-3 border border-slate-600 rounded-md hover:bg-slate-800 group"
-                key={tool.id}
+                key={tool.nama}
+                className="relative flex items-center gap-3 p-4 rounded-xl
+
+          border border-cyan-500/20
+          bg-slate-900/30 backdrop-blur-md
+
+          shadow-[0_0_15px_rgba(34,211,238,0.08)]
+
+          hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]
+          hover:border-cyan-400/40
+          hover:-translate-y-1
+
+          transition-all duration-300 group overflow-hidden"
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-delay={tool.dad}
                 data-aos-once="true"
               >
+                {/* Glow Background on Hover */}
+                <div className="absolute -z-10 w-32 h-32 bg-cyan-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+                {/* Icon */}
                 <img
                   src={tool.gambar}
                   alt="Tools Image"
-                  className="w-14 bg-slate-800 p-1 group-hover:bg-slate-900"
+                  className="w-14 bg-slate-800 p-1 rounded-md group-hover:bg-slate-700 transition"
                   loading="lazy"
                 />
+
+                {/* Text */}
                 <div>
-                  <h4 className="font-bold">{tool.nama}</h4>
-                  <p className="opacity-50">{tool.ket}</p>
+                  <h4 className="font-bold text-white">{tool.nama}</h4>
+                  <p className="opacity-50 text-sm">{tool.ket}</p>
                 </div>
               </div>
             ))}
@@ -328,57 +404,114 @@ function App() {
       {/* Tools End */}
 
       {/* Proyek Start */}
-      <section id="proyek" className="proyek mt-32 py-10">
+      <section
+        id="proyek"
+        className="
+    proyek mt-32 py-14
+
+    relative
+
+    border border-slate-800/50
+    rounded-3xl
+
+    bg-slate-950/20 backdrop-blur-md
+
+    shadow-[0_0_40px_rgba(0,0,0,0.4)]
+  "
+      >
+        {/* Glow Border Effect */}
+        <div
+          className="
+      absolute inset-0 rounded-3xl
+
+      bg-cyan-500/10
+      blur-3xl
+      opacity-40
+
+      -z-10
+    "
+        />
+
         <div>
+          {/* Title */}
           <h1
-            className="text-center text-4xl font-bold mb-2"
+            className="text-center text-4xl font-bold mb-2 text-white"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-once="true"
           >
-            Proyek
+            Projects
           </h1>
+
+          {/* Subtitle */}
           <p
-            className="text-base/loose text-center opacity-50"
+            className="text-base/loose text-center text-gray-400"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="300"
             data-aos-once="true"
           >
-            Berikut ini beberapa proyek yang telah saya buat
+            Here are some projects I have created.
           </p>
-          <div className="proyek-box mt-14 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
+
+          {/* Grid */}
+          <div className="proyek-box mt-14 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
             {listProyek.map((proyek) => (
               <div
                 key={proyek.id}
-                className="p-4 bg-slate-800 rounded-md"
+                className="
+            group relative p-4 rounded-2xl
+
+            bg-slate-900/40 backdrop-blur-md
+
+            border border-slate-700/40
+
+            transition-all duration-300
+
+            hover:-translate-y-2
+            hover:border-cyan-400/60
+            hover:shadow-[0_0_25px_rgba(34,211,238,0.35)]
+          "
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-delay={proyek.dad}
                 data-aos-once="true"
               >
-                <img src={proyek.gambar} alt="Proyek Image" loading="lazy" />
-                <div>
-                  <h1 className="text-2xl font-bold my-4">{proyek.nama}</h1>
-                  <p className="text-base/loose mb-4">{proyek.desk}</p>
+                <div className="overflow-hidden rounded-xl">
+                  <img
+                    src={proyek.gambar}
+                    alt="Proyek Image"
+                    loading="lazy"
+                    className="w-full h-48 object-cover rounded-xl group-hover:scale-105 transition duration-500"
+                  />
+                </div>
+
+                <div className="mt-4">
+                  <h1 className="text-xl font-bold text-white mb-2">
+                    {proyek.nama}
+                  </h1>
+
+                  <p className="text-sm text-gray-400 mb-4 leading-relaxed">
+                    {proyek.desk}
+                  </p>
+
                   <div className="flex flex-wrap gap-2">
                     {proyek.tools.map((tool, index) => (
-                      <p
-                        className="py-1 px-3 border-slate-500 rounded-md bg-slate-600 font-semibold"
+                      <span
                         key={index}
+                        className="
+                    text-xs px-3 py-1 rounded-full
+                    bg-slate-800/60
+                    border border-slate-600
+                    text-gray-300
+                    group-hover:border-cyan-400/50
+                    group-hover:text-cyan-300
+                  "
                       >
                         {tool}
-                      </p>
+                      </span>
                     ))}
                   </div>
-                  {/* <div className="mt-8 text-center">
-                  <a
-                    href="#"
-                    className="bg-cyan-700 p-3 rounded-lg block border-slate-600 hover:bg-cyan-600"
-                  >
-                    Lihat Website
-                  </a>
-                </div> */}
                 </div>
               </div>
             ))}
@@ -388,167 +521,289 @@ function App() {
       {/* Proyek End */}
 
       {/* Sertifikat Start*/}
-      <section id="sertifikat" className="pelatihan mt-32 py-10">
-        <div>
-          {" "}
-          <h1
-            className="text-center text-4xl font-bold mb-2"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-once="true"
-          >
-            {" "}
-            Pelatihan & Sertifikat{" "}
-          </h1>{" "}
-          <p
-            className="text-base/loose text-center opacity-50"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="300"
-            data-aos-once="true"
-          >
-            {" "}
-            Berikut beberapa pelatihan & sertifikasi yang telah saya ikuti{" "}
-          </p>
-          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-4">
-            {currentItems.map((item) => (
-              <div
-                key={item.id}
-                className="p-4  border rounded-md hover:bg-slate-700 transition-all duration-300"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                data-aos-delay={item.dad}
-                data-aos-once="true"
-              >
+      <section id="sertifikat" className="mt-32 py-10">
+        {/* Title */}
+        <h1
+          className="text-4xl font-bold mb-3 text-white text-center drop-shadow-[0_0_10px_rgba(34,211,238,0.3)]"
+          data-aos="fade-up"
+          data-aos-duration="800"
+          data-aos-once="true"
+        >
+          Training & Certificates
+        </h1>
+
+        {/* Subtitle */}
+        <p
+          className="text-base text-center text-gray-400 max-w-xl mx-auto"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="300"
+          data-aos-once="true"
+        >
+          Below are some of the training programs and certifications I have
+          completed.
+        </p>
+
+        {/* Grid */}
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {currentItems.map((item, index) => (
+            <div
+              key={item.id}
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay={item.dad}
+              data-aos-once="true"
+              className={`
+          group relative p-4 rounded-2xl
+
+          bg-slate-900/40 backdrop-blur-md
+          border border-slate-700/40
+
+          transition-all duration-300
+
+          hover:-translate-y-2
+          hover:border-cyan-400/60
+          hover:shadow-[0_0_25px_rgba(34,211,238,0.25)]
+
+          ${index % 2 === 0 ? "hover:rotate-1" : "hover:-rotate-1"}
+        `}
+            >
+              {/* Glow background */}
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 bg-cyan-400/10 blur-2xl transition duration-500 -z-10" />
+
+              {/* Image */}
+              <div className="overflow-hidden rounded-xl">
                 <img
                   src={item.gambar}
-                  alt="Sertifikat"
-                  className="rounded-md w-full object-cover"
+                  alt={item.nama}
+                  className="w-full h-48 object-cover rounded-xl group-hover:scale-105 transition duration-500"
+                  loading="lazy"
                 />
-                <h2 className="text-xl font-bold mt-4">{item.nama}</h2>
-                <p className="opacity-60 mt-1">{item.penyelenggara}</p>
-                <p className="text-sm opacity-50 mt-1">{item.tahun}</p>
               </div>
-            ))}
-          </div>
-          {/* Pagination */}
-          <div className="flex justify-center items-center gap-3 mt-10">
-            <button
-              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-              disabled={currentPage === 1}
-              className="px-4 py-2 rounded-md bg-slate-700 disabled:bg-slate-900 disabled:opacity-40 hover:bg-slate-600"
-            >
-              Prev
-            </button>
 
-            {[...Array(totalPages)].map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentPage(index + 1)}
-                className={`px-4 py-2 rounded-md transition-all duration-200 ${
-                  currentPage === index + 1
-                    ? "bg-cyan-700"
-                    : "bg-slate-700 hover:bg-slate-600"
-                }`}
-              >
-                {index + 1}
-              </button>
-            ))}
+              {/* Content */}
+              <div className="mt-4">
+                <h2 className="text-lg font-bold text-white">{item.nama}</h2>
 
+                <p className="text-sm text-gray-400 mt-1">
+                  {item.penyelenggara}
+                </p>
+
+                <p className="text-xs text-gray-500 mt-1">{item.tahun}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Pagination */}
+        <div className="flex justify-center items-center gap-3 mt-10">
+          <button
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+            className="px-4 py-2 rounded-md bg-slate-800 text-white disabled:opacity-40 hover:bg-slate-700 transition"
+          >
+            Prev
+          </button>
+
+          {[...Array(totalPages)].map((_, index) => (
             <button
-              onClick={() =>
-                setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-              }
-              disabled={currentPage === totalPages}
-              className="px-4 py-2 rounded-md bg-slate-700 disabled:bg-slate-900 disabled:opacity-40 hover:bg-slate-600"
+              key={index}
+              onClick={() => setCurrentPage(index + 1)}
+              className={`
+          px-4 py-2 rounded-md transition
+          ${
+            currentPage === index + 1
+              ? "bg-cyan-600 text-white shadow-[0_0_15px_rgba(34,211,238,0.4)]"
+              : "bg-slate-800 text-gray-300 hover:bg-slate-700"
+          }
+        `}
             >
-              Next
+              {index + 1}
             </button>
-          </div>
+          ))}
+
+          <button
+            onClick={() =>
+              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+            }
+            disabled={currentPage === totalPages}
+            className="px-4 py-2 rounded-md bg-slate-800 text-white disabled:opacity-40 hover:bg-slate-700 transition"
+          >
+            Next
+          </button>
         </div>
       </section>
       {/* Sertifikat End */}
 
-      {/* Kontak Start */}
-      <section id="kontak" className="kontak mt-32 sm:p-10 p-0">
-        <div>
-          <h1
-            className="text-4xl mb-2 font-bold text-center"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-once="true"
-          >
-            Kontak
-          </h1>
-          <p
-            className="text-base/loose text-center mb-10 opacity-50"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="300"
-            data-aos-once="true"
-          >
-            Mari Terhubung dengan Saya
-          </p>
+      {/* Contact Start */}
+      <section id="contact" className="contact mt-32 sm:p-10 p-4 relative">
+        {/* Title */}
+        <h1
+          className="text-4xl mb-2 font-bold text-center text-white"
+          data-aos="fade-up"
+        >
+          Contact
+        </h1>
+
+        {/* Subtitle */}
+        <p
+          className="text-base/loose text-center mb-10 text-gray-400"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Let’s get in touch with me
+        </p>
+
+        {/* Glow Background */}
+        <div className="absolute inset-0 -z-10 flex justify-center">
+          <div className="w-[500px] h-[500px] bg-cyan-400/10 blur-[120px] rounded-full" />
+        </div>
+
+        {/* Form Container */}
+        <div className="relative max-w-2xl mx-auto">
           <form
             action="https://formsubmit.co/agibpratama732@gmail.com"
             method="POST"
-            className="bg-slate-800 p-10 sm:w-fit w-full mx-auto rounded-md"
             onSubmit={handleSubmit}
             autoComplete="off"
+            className="
+        relative
+
+        bg-slate-900/40 backdrop-blur-md
+
+        border border-slate-700/50
+
+        rounded-3xl
+
+        p-8 sm:p-10
+
+        shadow-[0_0_30px_rgba(0,0,0,0.4)]
+
+        transition-all duration-300
+
+        hover:border-cyan-400/40
+        hover:shadow-[0_0_40px_rgba(34,211,238,0.25)]
+      "
             data-aos="fade-up"
             data-aos-duration="1000"
-            data-aos-delay="500"
-            data-aos-once="true"
+            data-aos-delay="400"
           >
             <div className="flex flex-col gap-6">
+              {/* Full Name */}
               <div className="flex flex-col gap-2">
-                <label className="font-semibold">Nama Lengkap</label>
+                <label className="font-semibold text-gray-200">Full Name</label>
                 <input
                   type="text"
                   name="nama"
-                  placeholder="Masukkan Nama Anda..."
-                  className="border border-slate-500 p-2 rounded-md"
+                  placeholder="Enter your name..."
+                  className="
+              p-3 rounded-xl
+
+              bg-slate-800/60
+              border border-slate-600
+
+              text-white
+
+              outline-none
+
+              focus:border-cyan-400
+              focus:shadow-[0_0_10px_rgba(34,211,238,0.25)]
+
+              transition
+            "
                   required
                 />
               </div>
+
+              {/* Email */}
               <div className="flex flex-col gap-2">
-                <label className="font-semibold">E-mail</label>
+                <label className="font-semibold text-gray-200">Email</label>
                 <input
-                  type="text"
+                  type="email"
                   name="email"
-                  placeholder="Masukkan E-Mail Anda...."
-                  className="border border-slate-500 p-2 rounded-md"
+                  placeholder="Enter your email..."
+                  className="
+              p-3 rounded-xl
+
+              bg-slate-800/60
+              border border-slate-600
+
+              text-white
+
+              outline-none
+
+              focus:border-cyan-400
+              focus:shadow-[0_0_10px_rgba(34,211,238,0.25)]
+
+              transition
+            "
                   required
                 />
               </div>
+
+              {/* Message */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="pesan" className="font-semibold">
-                  Pesan
-                </label>
+                <label className="font-semibold text-gray-200">Message</label>
                 <textarea
                   name="pesan"
-                  id="pesan"
-                  cols="45"
-                  rows="7"
-                  placeholder="Pesan..."
-                  className="border border-slate-500 p-2 rounded-md"
+                  rows="6"
+                  placeholder="Write your message..."
+                  className="
+              p-3 rounded-xl
+
+              bg-slate-800/60
+              border border-slate-600
+
+              text-white
+
+              outline-none
+
+              focus:border-cyan-400
+              focus:shadow-[0_0_10px_rgba(34,211,238,0.25)]
+
+              transition
+            "
                   required
-                ></textarea>
+                />
+
+                {/* Success message */}
                 {submitted && (
-                  <div className="bg-green-600 text-white p-3 rounded-md text-center font-semibold">
-                    ✓ Pesan Anda telah terkirim! Terima kasih telah menghubungi
-                    saya.
+                  <div
+                    className="
+              mt-2 p-3 rounded-xl
+
+              bg-green-500/10
+              border border-green-500/30
+
+              text-green-300 text-center
+              font-medium
+            "
+                  >
+                    ✓ Your message has been sent successfully!
                   </div>
                 )}
               </div>
-              <div className="text-center">
-                <button
-                  type="submit"
-                  className="bg-cyan-700 p-3 rounded-lg w-full cursor-pointer border-slate-600 hover:bg-cyan-600"
-                >
-                  Kirim Pesan
-                </button>
-              </div>
+
+              {/* Button */}
+              <button
+                type="submit"
+                className="
+            w-full py-3 rounded-xl
+
+            bg-cyan-600
+
+            font-semibold text-white
+
+            hover:bg-cyan-500
+            hover:shadow-[0_0_20px_rgba(34,211,238,0.35)]
+
+            active:scale-[0.98]
+
+            transition
+          "
+              >
+                Send Message
+              </button>
             </div>
           </form>
         </div>

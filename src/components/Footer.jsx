@@ -1,50 +1,41 @@
 const Footer = () => {
   return (
-    <footer className="w-full bg-slate-600 mt-32 py-6">
-      <div className="w-full px-6 flex flex-col md:flex-row gap-4 md:gap-6 justify-between items-center text-center md:text-left">
+    <footer className="w-full mt-32 py-10 border-t border-cyan-700/20 bg-slate-950">
+      <div className="w-full px-6 flex flex-col md:flex-row gap-6 justify-between items-center text-center md:text-left">
         {/* Logo */}
-        <h1 className="text-xl md:text-2xl font-bold text-slate-900">Agibee</h1>
+        <h1 className="text-xl md:text-2xl font-bold text-cyan-400">Agibee</h1>
 
         {/* Menu */}
-        <div className="flex flex-col md:flex-row gap-3 md:gap-7 mt-3 md:mt-0">
-          <a href="#beranda" className="hover:text-white transition-colors">
-            Beranda
+        <div className="flex flex-col md:flex-row gap-3 md:gap-7 text-slate-300">
+          <a href="#beranda" className="hover:text-cyan-400 transition">
+            Home
           </a>
-          <a href="#tentang" className="hover:text-white transition-colors">
-            Tentang
+          <a href="#tentang" className="hover:text-cyan-400 transition">
+            About
           </a>
-          <a href="#proyek" className="hover:text-white transition-colors">
-            Proyek
+          <a href="#proyek" className="hover:text-cyan-400 transition">
+            Projects
           </a>
         </div>
 
-        {/* Social Icons */}
-        <div className="flex gap-4 mt-3 md:mt-0">
-          <a
-            href="https://www.instagram.com/agprawaa19/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="ri-instagram-fill text-xl md:text-2xl"></i>
+        {/* Social */}
+        <div className="flex gap-5 text-slate-300">
+          <a className="hover:text-purple-400 transition" href="#">
+            <i className="ri-instagram-fill text-2xl"></i>
           </a>
-
-          <a
-            href="https://www.linkedin.com/in/agib-pratama-wadriansyah-078a49258/?isSelfProfile=true"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="ri-linkedin-fill text-xl md:text-2xl"></i>
+          <a className="hover:text-cyan-400 transition" href="#">
+            <i className="ri-linkedin-fill text-2xl"></i>
           </a>
-
-          <a
-            href="https://github.com/Agibee"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="ri-github-fill text-xl md:text-2xl"></i>
+          <a className="hover:text-white transition" href="#">
+            <i className="ri-github-fill text-2xl"></i>
           </a>
         </div>
       </div>
+
+      {/* Bottom text */}
+      <p className="text-center text-slate-500 text-sm mt-8">
+        © {new Date().getFullYear()} Agibee
+      </p>
     </footer>
   );
 };

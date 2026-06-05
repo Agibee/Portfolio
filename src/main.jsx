@@ -12,7 +12,7 @@ AOS.init({});
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <SplashCursor />
+    {/* <SplashCursor /> */}
     <Root />
-  </StrictMode>
+  </StrictMode>,
 );

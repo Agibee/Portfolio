@@ -2,6 +2,7 @@ import { useState } from "react";
 import { listTools, listProyek, listSertifikat } from "./data";
 import TextType from "./components/TextType";
 import Lanyard from "./components/Lanyard";
+import Navbar from "./components/Navbar";
 import ProfileCard from "./components/ProfileCard";
 
 function App() {
@@ -38,8 +39,9 @@ function App() {
   };
   return (
     <>
+      <Navbar />
       {/* Hero Start */}
-      <section id="hero" className="pt-4">
+      <section id="home" className="pt-4">
         <div
           className="flex items-center gap-3 mb-6 
 bg-slate-800/60 backdrop-blur-md 
@@ -102,7 +104,7 @@ shadow-[0_0_15px_rgba(34,211,238,0.15)]"
               </a>
 
               <a
-                href="#proyek"
+                href="#projects"
                 className="bg-slate-700 px-6 py-4 rounded-2xl hover:bg-slate-600 transition"
               >
                 View Projects <i className="ri-arrow-down-line ri-lg"></i>
@@ -214,7 +216,7 @@ shadow-[0_0_15px_rgba(34,211,238,0.15)]"
 
       {/* Tentang Start */}
       <section
-        id="tentang"
+        id="about"
         className="min-h-screen overflow-x-hidden mt-32 relative"
       >
         {/* 🔥 Electric Glow Background */}
@@ -405,7 +407,7 @@ shadow-[0_0_15px_rgba(34,211,238,0.15)]"
 
       {/* Proyek Start */}
       <section
-        id="proyek"
+        id="projects"
         className="
     proyek mt-32 py-14
 

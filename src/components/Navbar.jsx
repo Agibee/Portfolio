@@ -35,7 +35,7 @@ const Navbar = () => {
 
       {/* Menu */}
       <ul className="flex gap-6 text-sm sm:text-base text-gray-300">
-        {["Home", "About", "Projects", "Contact"].map((item) => (
+        {["home", "about", "projects", "contact"].map((item) => (
           <li key={item}>
             <a
               href={`#${item}`}

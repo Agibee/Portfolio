@@ -7,13 +7,13 @@ const Footer = () => {
 
         {/* Menu */}
         <div className="flex flex-col md:flex-row gap-3 md:gap-7 text-slate-300">
-          <a href="#beranda" className="hover:text-cyan-400 transition">
+          <a href="#home" className="hover:text-cyan-400 transition">
             Home
           </a>
-          <a href="#tentang" className="hover:text-cyan-400 transition">
+          <a href="#about" className="hover:text-cyan-400 transition">
             About
           </a>
-          <a href="#proyek" className="hover:text-cyan-400 transition">
+          <a href="#projects" className="hover:text-cyan-400 transition">
             Projects
           </a>
         </div>

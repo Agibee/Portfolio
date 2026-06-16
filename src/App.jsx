@@ -304,7 +304,7 @@ shadow-[0_0_15px_rgba(34,211,238,0.15)]"
                 </p>
 
                 {/* Info Box */}
-                <div className="p-4 rounded-xl border border-cyan-500/20 bg-slate-900/30 backdrop-blur-md shadow-[0_0_20px_rgba(34,211,238,0.1)] text-sm text-gray-400 space-y-2">
+                {/* <div className="p-4 rounded-xl border border-cyan-500/20 bg-slate-900/30 backdrop-blur-md shadow-[0_0_20px_rgba(34,211,238,0.1)] text-sm text-gray-400 space-y-2">
                   <p>
                     <span className="text-white font-semibold">
                       Birth Date:
@@ -327,7 +327,7 @@ shadow-[0_0_15px_rgba(34,211,238,0.15)]"
                     <span className="text-white font-semibold">Email:</span>{" "}
                     agibpratama732@gmail.com
                   </p>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

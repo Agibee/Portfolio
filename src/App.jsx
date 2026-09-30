@@ -336,7 +336,7 @@ shadow-[0_0_15px_rgba(34,211,238,0.15)]"
       {/* Tentang End */}
 
       {/* Tools Start */}
-      <section id="tools" className="tools mt-32 ">
+      <section id="tools" className="tools mt-32">
         <div>
           {/* Title */}
           <h1
@@ -366,16 +366,12 @@ shadow-[0_0_15px_rgba(34,211,238,0.15)]"
               <div
                 key={tool.nama}
                 className="relative flex items-center gap-3 p-4 rounded-xl
-
           border border-cyan-500/20
           bg-slate-900/30 backdrop-blur-md
-
           shadow-[0_0_15px_rgba(34,211,238,0.08)]
-
           hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]
           hover:border-cyan-400/40
           hover:-translate-y-1
-
           transition-all duration-300 group overflow-hidden"
                 data-aos="fade-up"
                 data-aos-duration="1000"
@@ -408,31 +404,10 @@ shadow-[0_0_15px_rgba(34,211,238,0.15)]"
       {/* Proyek Start */}
       <section
         id="projects"
-        className="
-    proyek mt-32 py-14
-
-    relative
-
-    border border-slate-800/50
-    rounded-3xl
-
-    bg-slate-950/20 backdrop-blur-md
-
-    shadow-[0_0_40px_rgba(0,0,0,0.4)]
-  "
+        className="proyek mt-32 py-14 relative border border-slate-800/50 rounded-3xl bg-slate-950/20 backdrop-blur-md shadow-[0_0_40px_rgba(0,0,0,0.4)]"
       >
         {/* Glow Border Effect */}
-        <div
-          className="
-      absolute inset-0 rounded-3xl
-
-      bg-cyan-500/10
-      blur-3xl
-      opacity-40
-
-      -z-10
-    "
-        />
+        <div className="absolute inset-0 rounded-3xl bg-cyan-500/10 blur-3xl opacity-40 -z-10" />
 
         <div>
           {/* Title */}

@@ -66,8 +66,10 @@ shadow-[0_0_15px_rgba(34,211,238,0.15)]"
 
             {/* Heading */}
             <h1 className="text-xl/tight font-bold mb-4 sm:text-2xl md:text-4xl lg:text-5xl">
-              Hi, Im{" "}
-              <span className="text-cyan-400">Agib Pratama Wadriansyah</span>
+              Hello, I'm
+              <span className="m-2 text-cyan-400">
+                Agib Pratama Wadriansyah
+              </span>
             </h1>
 
             {/* Role */}
@@ -350,7 +352,7 @@ shadow-[0_0_15px_rgba(34,211,238,0.15)]"
 
           {/* Description */}
           <p
-            className="text-gray-400 max-w-xl mx-auto text-sm md:text-base"
+            className="text-gray-400 max-w-xl mx-auto text-sm md:text-basetext-gray-400"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="300"

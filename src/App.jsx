@@ -258,7 +258,7 @@ shadow-[0_0_15px_rgba(34,211,238,0.15)]"
                 data-aos-delay="200"
               >
                 Web Developer focused on building modern web applications, with
-                interests in artificial intelligence and data analysis.e
+                interests in artificial intelligence and data analysis
               </p>
             </div>
 
@@ -340,7 +340,7 @@ shadow-[0_0_15px_rgba(34,211,238,0.15)]"
         <div>
           {/* Title */}
           <h1
-            className="text-4xl font-bold mb-3 text-white drop-shadow-[0_0_10px_rgba(34,211,238,0.3)]"
+            className="text-4xl  text-center font-bold mb-3 text-white drop-shadow-[0_0_10px_rgba(34,211,238,0.3)]"
             data-aos="fade-up"
             data-aos-duration="800"
             data-aos-once="true"
@@ -350,14 +350,14 @@ shadow-[0_0_15px_rgba(34,211,238,0.15)]"
 
           {/* Description */}
           <p
-            className="xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full text-base/loose text-gray-400"
+            className="text-gray-400 max-w-xl mx-auto text-sm md:text-base"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="300"
             data-aos-once="true"
           >
             A collection of tools and technologies I use to build modern web
-            applications.
+            applications
           </p>
 
           {/* Tools Grid */}
